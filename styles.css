@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "forest";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(20.84% 0.008 17.911);
+  --color-base-200: oklch(18.522% 0.007 17.911);
+  --color-base-300: oklch(16.203% 0.007 17.911);
+  --color-base-content: oklch(83.768% 0.001 17.911);
+  --color-primary: oklch(68.628% 0.185 148.958);
+  --color-primary-content: oklch(0% 0 0);
+  --color-secondary: oklch(69.776% 0.135 168.327);
+  --color-secondary-content: oklch(13.955% 0.027 168.327);
+  --color-accent: oklch(70.628% 0.119 185.713);
+  --color-accent-content: oklch(14.125% 0.023 185.713);
+  --color-neutral: oklch(30.698% 0.039 171.364);
+  --color-neutral-content: oklch(86.139% 0.007 171.364);
+  --color-info: oklch(72.06% 0.191 231.6);
+  --color-info-content: oklch(0% 0 0);
+  --color-success: oklch(64.8% 0.15 160);
+  --color-success-content: oklch(0% 0 0);
+  --color-warning: oklch(84.71% 0.199 83.87);
+  --color-warning-content: oklch(0% 0 0);
+  --color-error: oklch(71.76% 0.221 22.18);
+  --color-error-content: oklch(0% 0 0);
+  --radius-selector: 1rem;
+  --radius-field: 2rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+
+body {
+  font-family: sans-serif;
+  background: #181818;
+  margin: 0;
+  padding: 0;
+  color: #CDCDCD;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #1f1f1f;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  padding: 20px;
+}
+
+h1, h2 {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+}
+
+button {
+  background-color: #ea7aaa;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+button:hover {
+  background-color: #fa5687;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
+  background-color: #454545;
+  resize: none;
+}
+
+a:link {
+  color: #ea7aaa;
+}
+
+a:link, a:visited, a:hover, a:focus, a:active {
+  color: #bc6b8f;
+}
+
+#status {
+  /* Initially hide the status box until we have a status to display. */
+  display: none;
+  background: #272727;
+  padding: 8px;
+  margin-top: 10px;
+  white-space: pre-wrap;
+  border-radius: 4px;
+}

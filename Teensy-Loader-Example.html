@@ -1,114 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="forest">
 <head>
   <meta charset="UTF-8" />
   <title>Teensy Loader Javascript Test</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #181818;
-      margin: 0;
-      padding: 0;
-      color: #CDCDCD;
-    }
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
-      background: #1f1f1f;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-      padding: 20px;
-    }
-    h1, h2 {
-      margin-top: 0;
-      font-weight: normal;
-    }
-    input[type="file"] {
-      margin: 10px 0;
-    }
-    button {
-      background-color: #ea7aaa;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 4px;
-      color: white;
-      cursor: pointer;
-      margin: 5px 0;
-    }
-    button:hover {
-      background-color: #fa5687;
-    }
-    .section {
-      margin: 20px 0;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    progress {
-      width: 100%;
-      height: 20px;
-    }
-    textarea {
-      width: 100%;
-      height: 150px;
-      margin-top: 10px;
-      background-color: #454545;
-      resize: none;
-    }
-    a:link {
-    color: #ea7aaa;
-    }
-    a:link, a:visited, a:hover, a:focus, a:active {
-        color: #bc6b8f;
-    }
-    #status {/* Initially hide the status box until we have a status to display. */
-      display: none;
-      background: #272727;
-      padding: 8px;
-      margin-top: 10px;
-      white-space: pre-wrap;
-      border-radius: 4px;
-    }
-  </style>
+  <link rel="stylesheet" href="./src/output.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Teensy Loader Javascript Test</h1>
+  <div class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="none"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="-1"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li><a href="index.html">Home</a></li>
+        <li><a>Showcase</a></li>
+        <li>
+          <a>Comunity</a>
+          <ul class="p-2">
+            <li><a>Discord</a></li>
+            <li><a>Github</a></li>
+          </ul>
+        </li>
+        <li><a href="Teensy-Loader-Example.html">Flasher</a></li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-xl">BLOOM</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a href="index.html">Home</a></li>
+      <li><a>Showcase</a></li>
+      <li>
+        <details>
+          <summary>Comunity</summary>
+          <ul class="p-2 bg-base-100 w-40 z-1">
+            <li><a>Discord</a></li>
+            <li><a>Github</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="Teensy-Loader-Example.html">Flasher</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a class="btn">Button</a>
+  </div>
+</div>
+
+  <div class="container mx-auto max-w-2xl p-6">
+    <h1 class="text-3xl font-bold mb-2">Teensy Loader Javascript Test</h1>
     <p>A simple page for loading firmware, selecting a Teensy, and flashing via WebHID &amp; reading Serial.</p>
-    <p>Created by <a href="https://github.com/coelacant1">Coela Can't!</a></p>
-    <div><a href="https://github.com/coelacant1/Teensy-Loader-Javascript">Visit the Github page here, example firmware files here.</a></div>
+    <p class="mb-4">Created by <a href="https://github.com/coelacant1" class="link link-primary">Coela Can't!</a></p>
+    <div class="mb-8"><a href="https://github.com/coelacant1/Teensy-Loader-Javascript" class="link link-secondary">Visit the Github page here, example firmware files here.</a></div>
 
     <!-- Firmware Selection -->
-    <div class="section">
-      <h2>1. Firmware</h2>
-      <p>Parses Intel HEX for single .hex, in .ehex it sends the .hex data to flash and loader program to memory, and .bin sends raw data.</p>
-      <label for="firmwareInput">Select Firmware File (.hex, .ehex, .bin):</label>
-      <input type="file" id="firmwareInput" accept=".hex,.ehex,.bin" />
+    <div class="card bg-base-200 shadow-xl mb-6">
+      <div class="card-body">
+        <h2 class="card-title text-primary">1. Firmware</h2>
+        <p class="text-sm opacity-80 mb-2">Parses Intel HEX for single .hex, in .ehex it sends the .hex data to flash and loader program to memory, and .bin sends raw data.</p>
+        <label class="label font-bold" for="firmwareInput">Select Firmware File (.hex, .ehex, .bin):</label>
+        <input type="file" id="firmwareInput" accept=".hex,.ehex,.bin" class="file-input file-input-bordered file-input-primary w-full" />
+      </div>
     </div>
 
     <!-- Device Selection & Flashing -->
-    <div class="section">
-      <h2>2. Device & Flash</h2>
-      <p>Press reset on your Teensy to get it into programming mode.</p>
-      <button id="selectDeviceBtn">Select Teensy Device</button>
-      <br />
-      <button id="uploadFirmwareBtn">Upload Firmware</button>
-      <progress id="flashProgress" value="0" max="1"></progress>
+    <div class="card bg-base-200 shadow-xl mb-6">
+      <div class="card-body">
+        <h2 class="card-title text-primary">2. Device & Flash</h2>
+        <p class="text-sm opacity-80 mb-4">Press reset on your Teensy to get it into programming mode.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <button id="selectDeviceBtn" class="btn btn-primary">Select Teensy Device</button>
+          <button id="uploadFirmwareBtn" class="btn btn-secondary">Upload Firmware</button>
+        </div>
+        <progress id="flashProgress" class="progress progress-primary w-full" value="0" max="1"></progress>
+      </div>
     </div>
 
     <!-- Status Output -->
-    <div class="section">
-        <div id="status">No status yet.</div>
+    <div class="mb-6">
+        <div id="status" class="alert shadow-lg hidden whitespace-pre-wrap font-mono text-xs">No status yet.</div>
     </div>
 
     <!-- Serial Port -->
-    <div class="section">
-      <h2>3. Serial Port</h2>
-      <button id="openSerialBtn">Open Serial</button>
-      <button id="closeSerialBtn">Close Serial</button>
-      <textarea id="log" readonly placeholder="Serial output will appear here..."></textarea>
+    <div class="card bg-base-200 shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title text-primary">3. Serial Port</h2>
+        <div class="flex gap-2 mb-4">
+          <button id="openSerialBtn" class="btn btn-outline btn-success btn-sm">Open Serial</button>
+          <button id="closeSerialBtn" class="btn btn-outline btn-error btn-sm">Close Serial</button>
+        </div>
+        <textarea id="log" class="textarea textarea-bordered h-40 font-mono text-sm" readonly placeholder="Serial output will appear here..."></textarea>
+      </div>
     </div>
   </div>
 
@@ -139,11 +124,12 @@
       if (!message) {
         // hide the status area if no message
         statusElem.style.display = 'none';
+        statusElem.classList.add('hidden');
         statusElem.textContent = '';
         return;
       }
       console.log(message);
-      statusElem.style.display = 'block';
+      statusElem.classList.remove('hidden');
       statusElem.textContent = message;
     }
 
