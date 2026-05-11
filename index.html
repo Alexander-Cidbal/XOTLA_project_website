@@ -27,6 +27,7 @@
         </ul>
       </div>
       <a class="btn btn-ghost text-xl">BLOOM</a>
+      
       <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-35 border p-4">
   
   <label class="label">
@@ -49,7 +50,7 @@
             <summary>Community</summary>
             <ul class="p-2 bg-base-100 w-40 z-1">
               <li><a>Discord</a></li>
-              <li><a>Github</a></li>
+              <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom">Github</a></li>
             </ul>
           </details>
         </li>
@@ -67,8 +68,9 @@
     <div class="hero-content flex-col lg:flex-row gap-12 text-neutral-content">
       <img src="./Files/Bloom_transparent_1.png" class="max-w-xs md:max-w-sm drop-shadow-2xl -translate-y-8 lg:-translate-y-16 transition-transform duration-500 hover:scale-105" alt="Bloom Icon" />
       <div class="max-w-md text-center lg:text-left">
-        <h1 class="text-7xl font-bold text-primary">Welcome to BLOOM</h1>
-        <p class="py-6 text-lg">
+        <h1 class="text-7xl font-bold text-primary">Welcome to</h1>
+        <h1 class="text-7xl font-bold text-white-800">BLOOM</h1>
+        <p class="py-6 text-3xl">
           The ultimate DIY beatmaking platform. Make your own beat machine!
         </p>
         <div class="flex gap-4 justify-center">
@@ -81,21 +83,46 @@
 
   <!-- Sección 2 -->
   <section class="py-24 bg-base-300">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-secondary mb-6">Explore the Potential</h2>
-      <p class="max-w-2xl mx-auto text-lg opacity-80">
-        This is Section 2. It uses the <code>bg-base-300</code> color from the Forest theme to create a subtle depth and separate the content from the hero area.
-      </p>
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+      <!-- Texto a la izquierda -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h2 class="text-4xl font-bold text-primary mb-6">Explore the Potential</h2>
+        <p class="text-lg opacity-80 mb-6">
+          Create intricate rhythms and unique sounds with our intuitive interface. BLOOM gives you the tools to express your musical vision without limits.
+        </p>
+        <button class="btn btn-secondary">Discover Features</button>
+      </div>
+      <!-- Imagen a la derecha -->
+      <div class="lg:w-1/2">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-secondary to-accent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          <img src="./Files/Bloom_Back1.jpg" class="relative rounded-2xl shadow-2xl transform transition duration-500 hover:scale-105 border-4 border-base-100" alt="Features Preview" />
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Sección 3 -->
   <section class="py-24 bg-neutral text-neutral-content">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-accent mb-6">Join the Community</h2>
-      <p class="max-w-2xl mx-auto text-lg opacity-80">
-        This is Section 3. By using <code>bg-neutral</code>, we get a stronger contrast that works great for closing the page or calling to action before the footer.
-      </p>
+    <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center gap-12">
+      <!-- Imagen a la izquierda -->
+      <div class="lg:w-1/2">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-accent to-primary rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          <img src="./Files/Bloom_Back1.jpg" class="relative rounded-2xl shadow-2xl transform transition duration-500 hover:-rotate-2 hover:scale-105 border-4 border-neutral-focus" alt="Community Support" />
+        </div>
+      </div>
+      <!-- Texto a la derecha -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h2 class="text-4xl font-bold text-accent mb-6">Join the Community</h2>
+        <p class="text-lg opacity-80 mb-6">
+          Connect with other creators, share your beats, and get help from the experts. Our community is growing every day, and we'd love for you to be a part of it.
+        </p>
+        <div class="flex gap-4 justify-center lg:justify-start">
+          <button class="btn btn-accent">Join Discord</button>
+          <button class="btn btn-outline btn-accent">View GitHub</button>
+        </div>
+      </div>
     </div>
   </section>
 
