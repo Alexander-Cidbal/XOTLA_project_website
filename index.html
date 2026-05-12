@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLOOM - Home</title>
+  <link rel="stylesheet" href="./src/output.css">
+</head>
+<body>
+  <div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+        </div>
+        <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          <li><a href="index.html">Home</a></li>
+          <li><a>Showcase</a></li>
+          <li>
+            <a>Community</a>
+            <ul class="p-2">
+              <li><a>Discord</a></li>
+              <li><a>Github</a></li>
+            </ul>
+          </li>
+          <li><a href="Teensy-Loader-Example.html">Flasher</a></li>
+        </ul>
+      </div>
+      <a class="btn btn-ghost text-xl">BLOOM</a>
+      
+      <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-35 border p-4">
+  
+  <label class="label">
+    <input
+  type="checkbox"
+  
+  class="toggle border-indigo-600 bg-indigo-500 checked:border-red-500 checked:bg-red-400 checked:text-red-800"
+/> 
+    ENGLISH
+  </label>
+</fieldset>
+    </div>
+    
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li><a href="index.html">Home</a></li>
+        <li><a>Showcase</a></li>
+        <li>
+          <details>
+            <summary>Community</summary>
+            <ul class="p-2 bg-base-100 w-40 z-1">
+              <li><a>Discord</a></li>
+              <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom">Github</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="Teensy-Loader-Example.html">Flasher</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end">
+      <a class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Sección 1: Bienvenida -->
+  <section class="hero min-h-[calc(100vh-64px)]" style="background-image: url('./Files/Bloom_Back1.jpg');">
+    <div class="hero-overlay bg-opacity-60 backdrop-blur-md"></div>
+    <div class="hero-content flex-col lg:flex-row gap-12 text-neutral-content">
+      <img src="./Files/Bloom_transparent_1.png" class="max-w-xs md:max-w-sm drop-shadow-2xl -translate-y-8 lg:-translate-y-16 transition-transform duration-500 hover:scale-150" alt="Bloom Icon" />
+      <div class="max-w-md text-center lg:text-left">
+        <h1 class="text-7xl font-bold text-primary">Welcome to</h1>
+        <h1 class="text-7xl font-bold text-white-800">BLOOM</h1>
+        <p class="py-6 text-3xl">
+          The ultimate DIY beatmaking platform. Make your own beat machine!
+        </p>
+        <div class="flex gap-4 justify-center">
+          <a href="Teensy-Loader-Example.html" class="btn btn-primary">Go to Flasher</a>
+          <button class="btn btn-outline">Learn More -></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2 -->
+  <section class="py-24 bg-base-300">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+      <!-- Texto a la izquierda -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h2 class="text-5xl font-bold text-primary mb-6">Expressive hardware 🕹️</h2>
+        <p class="text-3xl opacity-80 mb-6">
+          Pots, keys, joysticks, encoders, visual effects... variety of supported controls that feel natural and playful.
+        </p>
+        <button class="btn btn-secondary">Discover Features</button>
+      </div>
+      <!-- Imagen a la derecha -->
+      <div class="lg:w-1/2">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-secondary to-accent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          <img src="./Files/Bloom_Back1.jpg" class="relative rounded-2xl shadow-2xl transform transition duration-500 hover:scale-105 border-4 border-base-100" alt="Features Preview" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3 -->
+  <section class="py-24 bg-neutral text-neutral-content">
+    <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center gap-12">
+      <!-- Imagen a la izquierda -->
+      <div class="lg:w-1/2">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-accent to-primary rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          <img src="./Files/Bloom_Back1.jpg" class="relative rounded-2xl shadow-2xl transform transition duration-500 hover:-rotate-2 hover:scale-105 border-4 border-neutral-focus" alt="Community Support" />
+        </div>
+      </div>
+      <!-- Texto a la derecha -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h2 class="text-5xl font-bold text-accent mb-6">Powerful audio engine 🔊🔥</h2>
+        <p class="text-3xl opacity-80 mb-6">
+          Sample, add efects, load from sd-card, play live, complete beatmaking with ease.
+        </p>
+      
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 4 -->
+  <section class="py-24 bg-base-300">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+      <!-- Texto a la izquierda -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h2 class="text-4xl font-bold text-primary mb-6">Explore the Potential</h2>
+        <p class="text-lg opacity-80 mb-6">
+          Create intricate rhythms and unique sounds with our intuitive interface. BLOOM gives you the tools to express your musical vision without limits.
+        </p>
+        <button class="btn btn-secondary">Discover Features</button>
+      </div>
+      <!-- Imagen a la derecha -->
+      <div class="lg:w-1/2">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-secondary to-accent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          <img src="./Files/Bloom_Back1.jpg" class="relative rounded-2xl shadow-2xl transform transition duration-500 hover:scale-105 border-4 border-base-100" alt="Features Preview" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 5 -->
+  <section class="py-24 bg-neutral text-neutral-content">
+    <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center gap-12">
+      <!-- Imagen a la izquierda -->
+      <div class="lg:w-1/2">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-accent to-primary rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          <img src="./Files/Bloom_Back1.jpg" class="relative rounded-2xl shadow-2xl transform transition duration-500 hover:-rotate-2 hover:scale-105 border-4 border-neutral-focus" alt="Community Support" />
+        </div>
+      </div>
+      <!-- Texto a la derecha -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <h2 class="text-5xl font-bold text-accent mb-6">Join the Community</h2>
+        <p class="text-3xl opacity-80 mb-6">
+          Connect with other creators, share your beats, and get help from the experts. Our community is growing every day, and we'd love for you to be a part of it.
+        </p>
+        <div class="flex gap-4 justify-center lg:justify-start">
+          <button class="btn btn-accent">Join Discord</button>
+          <button class="btn btn-outline btn-accent">View GitHub</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer footer-center p-10 bg-base-100 text-base-content rounded">
+    <nav class="grid grid-flow-col gap-4">
+      <a class="link link-hover">About us</a>
+      <a class="link link-hover">Contact</a>
+      <a class="link link-hover">Jobs</a>
+      <a class="link link-hover">Press kit</a>
+    </nav> 
+    <aside>
+      <p>Copyright © 2024 - All right reserved by BLOOM Project</p>
+    </aside>
+  </footer>
+</body>
+</html>
