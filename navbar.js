@@ -1,5 +1,16 @@
 class MainNavbar extends HTMLElement {
   connectedCallback() {
+    // Inyectar estilos para controlar la visibilidad de los idiomas
+    if (!document.getElementById('lang-styles')) {
+      const style = document.createElement('style');
+      style.id = 'lang-styles';
+      style.textContent = `
+        html[lang="en"] .lang-es { display: none !important; }
+        html[lang="es"] .lang-en { display: none !important; }
+      `;
+      document.head.appendChild(style);
+    }
+
     this.innerHTML = `
     <div class="navbar bg-base-100 shadow-sm">
       <div class="navbar-start">
@@ -27,8 +38,8 @@ class MainNavbar extends HTMLElement {
         
         <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-35 border p-4">
           <label class="label cursor-pointer">
-            <input type="checkbox" class="toggle border-indigo-600 bg-indigo-500 checked:border-red-500 checked:bg-red-400 checked:text-red-800" /> 
-            <span class="ml-2">ENGLISH</span>
+            <input id="lang-toggle" type="checkbox" class="toggle border-indigo-600 bg-indigo-500 checked:border-red-500 checked:bg-red-400 checked:text-red-800" /> 
+            <span id="lang-label" class="ml-2 font-bold">ENGLISH</span>
           </label>
         </fieldset>
       </div>
@@ -56,6 +67,29 @@ class MainNavbar extends HTMLElement {
       </div>
     </div>
     `;
+
+    this.setupLanguage();
+  }
+
+  setupLanguage() {
+    const toggle = this.querySelector('#lang-toggle');
+    const label = this.querySelector('#lang-label');
+    
+    // Leer idioma guardado o usar inglés por defecto
+    const savedLang = localStorage.getItem('xotla-lang') || 'en';
+    
+    // Aplicar estado inicial
+    document.documentElement.setAttribute('lang', savedLang);
+    toggle.checked = (savedLang === 'es');
+    label.textContent = savedLang === 'en' ? 'ENGLISH' : 'ESPAÑOL';
+
+    // Escuchar cambios en el toggle
+    toggle.addEventListener('change', (e) => {
+      const newLang = e.target.checked ? 'es' : 'en';
+      document.documentElement.setAttribute('lang', newLang);
+      localStorage.setItem('xotla-lang', newLang);
+      label.textContent = newLang === 'en' ? 'ENGLISH' : 'ESPAÑOL';
+    });
   }
 }
 
