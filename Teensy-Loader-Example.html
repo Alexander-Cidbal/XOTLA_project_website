@@ -75,7 +75,15 @@
       <div class="card-body">
         <h2 class="card-title text-primary">1. Firmware</h2>
         <p class="text-sm opacity-80 mb-2">Parses Intel HEX for single .hex, in .ehex it sends the .hex data to flash and loader program to memory, and .bin sends raw data.</p>
-        <label class="label font-bold" for="firmwareInput">Select Firmware File (.hex, .ehex, .bin):</label>
+        <label class="label font-bold" for="firmwareInput">Select Firmware version:</label>
+        <details class="dropdown">
+  <summary class="btn bg-[#D1F561] text-[#181600] border-[#B8CA7F]">Official Releases</summary>
+  <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+    <li><a>Item 1</a></li>
+    <li><a>Item 2</a></li>
+  </ul>
+</details>
+<label class="label font-bold" for="firmwareInput">Or upload your OWN (.hex, .ehex, .bin):</label>
         <input type="file" id="firmwareInput" accept=".hex,.ehex,.bin" class="file-input file-input-bordered file-input-primary w-full" />
       </div>
     </div>
@@ -109,7 +117,8 @@
         <textarea id="log" class="textarea textarea-bordered h-40 font-mono text-sm" readonly placeholder="Serial output will appear here..."></textarea>
       </div>
     </div>
-    <p class="mb-4">Created by <a href="https://github.com/coelacant1" class="link link-primary">Coela Can't!</a></p>
+    <p class="mb-4">Based onn the amazing work by <a href="https://github.com/coelacant1" class="link link-primary">Coela Can't!</a></p>
+    <p class="mb-4">Modifications by <a href="https://github.com/Alexander-Cidbal" class="link link-primary">RZK</a></p>
   </div>
 
   <!-- Load the teensy-library.js from the same directory -->
