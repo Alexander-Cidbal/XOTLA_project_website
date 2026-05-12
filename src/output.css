@@ -17,7 +17,6 @@
     --spacing: 0.25rem;
     --container-sm: 24rem;
     --container-md: 28rem;
-    --container-xl: 36rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
     --text-xs: 0.75rem;
@@ -2053,9 +2052,6 @@
   .m-1 {
     margin: calc(var(--spacing) * 1);
   }
-  .m-2 {
-    margin: calc(var(--spacing) * 2);
-  }
   .filter {
     @layer daisyui.l1.l2.l3 {
       display: flex;
@@ -2157,6 +2153,15 @@
   }
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
+  }
+  .mb-72 {
+    margin-bottom: calc(var(--spacing) * 72);
+  }
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
   }
   .status {
     @layer daisyui.l1.l2.l3 {
@@ -2308,6 +2313,14 @@
       grid-auto-rows: max-content;
     }
   }
+  .card-actions {
+    @layer daisyui.l1.l2.l3 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: calc(0.25rem * 2);
+    }
+  }
   .card-title {
     @layer daisyui.l1.l2.l3 {
       display: flex;
@@ -2388,8 +2401,14 @@
   .hidden {
     display: none;
   }
+  .inline-block {
+    display: inline-block;
+  }
   .table {
     display: table;
+  }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
   }
   .h-5 {
     height: calc(var(--spacing) * 5);
@@ -2399,6 +2418,17 @@
   }
   .min-h-\[calc\(100vh-64px\)\] {
     min-height: calc(100vh - 64px);
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .btn-block {
+    @layer daisyui.l1.l2 {
+      width: 100%;
+    }
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
@@ -2412,14 +2442,14 @@
   .w-52 {
     width: calc(var(--spacing) * 52);
   }
-  .w-fit {
-    width: fit-content;
-  }
   .w-full {
     width: 100%;
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
+  }
+  .max-w-96 {
+    max-width: calc(var(--spacing) * 96);
   }
   .max-w-md {
     max-width: var(--container-md);
@@ -2477,11 +2507,17 @@
       }
     }
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .resize {
     resize: both;
   }
   .grid-flow-col {
     grid-auto-flow: column;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -2498,11 +2534,23 @@
   .justify-center {
     justify-content: center;
   }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .justify-start {
+    justify-content: flex-start;
+  }
+  .justify-items-center {
+    justify-items: center;
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
   }
   .gap-12 {
     gap: calc(var(--spacing) * 12);
@@ -2544,35 +2592,17 @@
   .border-\[\#B8CA7F\] {
     border-color: #B8CA7F;
   }
-  .border-\[\#f1d800\] {
-    border-color: #f1d800;
-  }
   .border-base-100 {
     border-color: var(--color-base-100);
   }
   .border-base-300 {
     border-color: var(--color-base-300);
   }
-  .border-black {
-    border-color: var(--color-black);
-  }
   .border-indigo-600 {
     border-color: var(--color-indigo-600);
   }
-  .border-white {
-    border-color: var(--color-white);
-  }
-  .bg-\[\#D1E661\] {
-    background-color: #D1E661;
-  }
   .bg-\[\#D1F561\] {
     background-color: #D1F561;
-  }
-  .bg-\[\#FEE502\] {
-    background-color: #FEE502;
-  }
-  .bg-\[D1E661\] {
-    background-color: D1E661;
   }
   .bg-base-100 {
     background-color: var(--color-base-100);
@@ -2582,9 +2612,6 @@
   }
   .bg-base-300 {
     background-color: var(--color-base-300);
-  }
-  .bg-black {
-    background-color: var(--color-black);
   }
   .bg-indigo-500 {
     background-color: var(--color-indigo-500);
@@ -2614,6 +2641,9 @@
   }
   .mask-repeat {
     mask-repeat: repeat;
+  }
+  .fill-current {
+    fill: currentcolor;
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -2647,6 +2677,9 @@
   }
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
+  }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
   }
   .py-24 {
     padding-block: calc(var(--spacing) * 24);
@@ -2756,8 +2789,8 @@
   .text-primary {
     color: var(--color-primary);
   }
-  .text-white {
-    color: var(--color-white);
+  .text-secondary {
+    color: var(--color-secondary);
   }
   .link-hover {
     @layer daisyui.l1.l2 {
@@ -2780,8 +2813,8 @@
   .opacity-25 {
     opacity: 25%;
   }
-  .opacity-30 {
-    opacity: 30%;
+  .opacity-60 {
+    opacity: 60%;
   }
   .opacity-80 {
     opacity: 80%;
@@ -2916,12 +2949,6 @@
       --btn-fg: var(--color-error-content);
     }
   }
-  .btn-info {
-    @layer daisyui.l1.l2.l3 {
-      --btn-color: var(--color-info);
-      --btn-fg: var(--color-info-content);
-    }
-  }
   .btn-primary {
     @layer daisyui.l1.l2.l3 {
       --btn-color: var(--color-primary);
@@ -2944,13 +2971,6 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         opacity: 50%;
-      }
-    }
-  }
-  .group-hover\:opacity-60 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        opacity: 60%;
       }
     }
   }
@@ -3024,9 +3044,9 @@
       max-width: var(--container-3xl);
     }
   }
-  .lg\:mx-0 {
-    @media (width >= 64rem) {
-      margin-inline: calc(var(--spacing) * 0);
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
   .lg\:flex {
@@ -3048,6 +3068,11 @@
     @media (width >= 64rem) {
       --tw-translate-y: calc(var(--spacing) * 0);
       translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .lg\:flex-row {
@@ -3310,6 +3335,74 @@
 @keyframes progress {
   50% {
     background-position-x: -115%;
+  }
+}
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      color-scheme: dark;
+      --color-base-100: oklch(21% 0.006 56.043);
+      --color-base-200: oklch(14% 0.004 49.25);
+      --color-base-300: oklch(0% 0 0);
+      --color-base-content: oklch(84.955% 0 0);
+      --color-primary: oklch(87% 0.169 91.605);
+      --color-primary-content: oklch(19.693% 0.004 196.779);
+      --color-secondary: oklch(51% 0.253 323.949);
+      --color-secondary-content: oklch(89.196% 0.049 305.03);
+      --color-accent: oklch(76% 0.233 130.85);
+      --color-accent-content: oklch(0% 0 0);
+      --color-neutral: oklch(24.371% 0.046 65.681);
+      --color-neutral-content: oklch(84.874% 0.009 65.681);
+      --color-info: oklch(54.615% 0.215 262.88);
+      --color-info-content: oklch(90.923% 0.043 262.88);
+      --color-success: oklch(62% 0.194 149.214);
+      --color-success-content: oklch(12.541% 0.033 149.213);
+      --color-warning: oklch(66.584% 0.157 58.318);
+      --color-warning-content: oklch(13.316% 0.031 58.318);
+      --color-error: oklch(65.72% 0.199 27.33);
+      --color-error-content: oklch(13.144% 0.039 27.33);
+      --radius-selector: 0.25rem;
+      --radius-field: 0.5rem;
+      --radius-box: 0.5rem;
+      --size-selector: 0.25rem;
+      --size-field: 0.25rem;
+      --border: 1.5px;
+      --depth: 1;
+      --noise: 1;
+    }
+  }
+}
+@layer base {
+  :root:has(input.theme-controller[value=halloween]:checked),[data-theme="halloween"] {
+    color-scheme: dark;
+    --color-base-100: oklch(21% 0.006 56.043);
+    --color-base-200: oklch(14% 0.004 49.25);
+    --color-base-300: oklch(0% 0 0);
+    --color-base-content: oklch(84.955% 0 0);
+    --color-primary: oklch(87% 0.169 91.605);
+    --color-primary-content: oklch(19.693% 0.004 196.779);
+    --color-secondary: oklch(51% 0.253 323.949);
+    --color-secondary-content: oklch(89.196% 0.049 305.03);
+    --color-accent: oklch(76% 0.233 130.85);
+    --color-accent-content: oklch(0% 0 0);
+    --color-neutral: oklch(24.371% 0.046 65.681);
+    --color-neutral-content: oklch(84.874% 0.009 65.681);
+    --color-info: oklch(54.615% 0.215 262.88);
+    --color-info-content: oklch(90.923% 0.043 262.88);
+    --color-success: oklch(62% 0.194 149.214);
+    --color-success-content: oklch(12.541% 0.033 149.213);
+    --color-warning: oklch(66.584% 0.157 58.318);
+    --color-warning-content: oklch(13.316% 0.031 58.318);
+    --color-error: oklch(65.72% 0.199 27.33);
+    --color-error-content: oklch(13.144% 0.039 27.33);
+    --radius-selector: 0.25rem;
+    --radius-field: 0.5rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1.5px;
+    --depth: 1;
+    --noise: 1;
   }
 }
 @layer base {

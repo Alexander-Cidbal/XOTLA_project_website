@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+<head>
+  <link rel="icon" type="image/x-icon" href="./Files/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XOTLA - Tutorials</title>
+  <link rel="stylesheet" href="./src/output.css">
+  <script src="navbar.js" defer></script>
+  <script src="footer.js" defer></script>
+</head>
+<body class="bg-base-200 min-h-screen">
+  <!-- Nuestra Navbar empaquetada -->
+  <main-navbar></main-navbar>
+
+  <div class="container mx-auto px-6 py-12">
+    <h1 class="text-5xl font-bold text-primary mb-12 text-center">Tutorials</h1>
+    
+    <!-- Grid responsivo: 1 columna en móvil, 2 en tablets, 3 en desktop -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      
+      <!-- Card 1: Assembly -->
+      <div class="card bg-base-100 w-full max-w-96 shadow-sm border border-base-300">
+        <figure>
+          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Assembly" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title text-secondary">Assembling your XOTLA</h2>
+          <p>A complete guide to soldering and assembling the hardware components of your sampler from scratch.</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Watch Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Firmware -->
+      <div class="card bg-base-100 w-full max-w-96 shadow-sm border border-base-300">
+        <figure>
+          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Firmware" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title text-secondary">Flashing Firmware</h2>
+          <p>Learn how to use the WebHID flasher to keep your device updated with the latest musical features.</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Read Guide</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: MIDI -->
+      <div class="card bg-base-100 w-full max-w-96 shadow-sm border border-base-300">
+        <figure>
+          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="MIDI" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title text-secondary">MIDI Mapping</h2>
+          <p>Configure your XOTLA to control your favorite DAW or external hardware via native MIDI support.</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <main-footer></main-footer>
+</body>
+</html>
