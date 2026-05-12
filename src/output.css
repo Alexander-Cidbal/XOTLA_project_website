@@ -2412,6 +2412,9 @@
   .w-52 {
     width: calc(var(--spacing) * 52);
   }
+  .w-fit {
+    width: fit-content;
+  }
   .w-full {
     width: 100%;
   }
@@ -2777,6 +2780,9 @@
   .opacity-25 {
     opacity: 25%;
   }
+  .opacity-30 {
+    opacity: 30%;
+  }
   .opacity-80 {
     opacity: 80%;
   }
@@ -2941,6 +2947,13 @@
       }
     }
   }
+  .group-hover\:opacity-60 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        opacity: 60%;
+      }
+    }
+  }
   .group-hover\:duration-200 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -3009,6 +3022,11 @@
   .md\:max-w-3xl {
     @media (width >= 48rem) {
       max-width: var(--container-3xl);
+    }
+  }
+  .lg\:mx-0 {
+    @media (width >= 64rem) {
+      margin-inline: calc(var(--spacing) * 0);
     }
   }
   .lg\:flex {
