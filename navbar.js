@@ -39,11 +39,11 @@ class MainNavbar extends HTMLElement {
                   <span class="lang-en">Tutorials</span>
                   <span class="lang-es">Tutoriales</span>
                 </a></li>
-                <li><a>
+                <li><a href="https://discord.gg/2Ecx7sF5" target="_blank" rel="noopener noreferrer">
                   <span class="lang-en">Discord</span>
                   <span class="lang-es">Discord</span>
                 </a></li>
-                <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom">
+                <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom" target="_blank" rel="noopener noreferrer">
                   <span class="lang-en">Github</span>
                   <span class="lang-es">Github</span>
                 </a></li>
@@ -86,11 +86,11 @@ class MainNavbar extends HTMLElement {
                   <span class="lang-en">Tutorials</span>
                   <span class="lang-es">Tutoriales</span>
                 </a></li>
-                <li><a>
+                <li><a href="https://discord.gg/2Ecx7sF5" target="_blank" rel="noopener noreferrer">
                   <span class="lang-en">Discord</span>
                   <span class="lang-es">Discord</span>
                 </a></li>
-                <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom">
+                <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom" target="_blank" rel="noopener noreferrer">
                   <span class="lang-en">Github</span>
                   <span class="lang-es">Github</span>
                 </a></li>

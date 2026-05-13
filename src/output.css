@@ -12,6 +12,7 @@
     --color-indigo-500: oklch(58.5% 0.233 277.117);
     --color-indigo-600: oklch(51.1% 0.262 276.966);
     --color-black: #000;
+    --color-white: #fff;
     --spacing: 0.25rem;
     --container-xs: 20rem;
     --container-sm: 24rem;
@@ -2675,8 +2676,20 @@
   .border-base-300 {
     border-color: var(--color-base-300);
   }
+  .border-black {
+    border-color: var(--color-black);
+  }
   .border-indigo-600 {
     border-color: var(--color-indigo-600);
+  }
+  .bg-\[\#1A77F2\] {
+    background-color: #1A77F2;
+  }
+  .bg-\[\#5865F2\] {
+    background-color: #5865F2;
+  }
+  .bg-\[\#7289da\] {
+    background-color: #7289da;
   }
   .bg-\[\#D1F561\] {
     background-color: #D1F561;
@@ -2689,6 +2702,9 @@
   }
   .bg-base-300 {
     background-color: var(--color-base-300);
+  }
+  .bg-black {
+    background-color: var(--color-black);
   }
   .bg-indigo-500 {
     background-color: var(--color-indigo-500);
@@ -2861,6 +2877,9 @@
   .text-\[\#181600\] {
     color: #181600;
   }
+  .text-\[\#E0E3FF\] {
+    color: #E0E3FF;
+  }
   .text-accent {
     color: var(--color-accent);
   }
@@ -2881,6 +2900,9 @@
   }
   .text-warning-content {
     color: var(--color-warning-content);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .link-hover {
     @layer daisyui.l1.l2 {
