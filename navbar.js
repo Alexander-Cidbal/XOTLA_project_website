@@ -21,17 +21,38 @@ class MainNavbar extends HTMLElement {
             </svg>
           </div>
           <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            <li><a href="index.html">Home</a></li>
-            <li><a>Showcase</a></li>
+            <li><a href="index.html">
+              <span class="lang-en">Home</span>
+              <span class="lang-es">Inicio</span>
+            </a></li>
+            <li><a>
+              <span class="lang-en">Showcase</span>
+              <span class="lang-es">Muestra</span>
+            </a></li>
             <li>
-              <a>Community</a>
+              <a>
+                <span class="lang-en">Community</span>
+                <span class="lang-es">Comunidad</span>
+              </a>
               <ul class="p-2">
-                <li><a href="Tutorials.html">Tutorials</a></li>
-                <li><a>Discord</a></li>
-                <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom">Github</a></li>
+                <li><a href="Tutorials.html">
+                  <span class="lang-en">Tutorials</span>
+                  <span class="lang-es">Tutoriales</span>
+                </a></li>
+                <li><a>
+                  <span class="lang-en">Discord</span>
+                  <span class="lang-es">Discord</span>
+                </a></li>
+                <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom">
+                  <span class="lang-en">Github</span>
+                  <span class="lang-es">Github</span>
+                </a></li>
               </ul>
             </li>
-            <li><a href="Flashing.html">Flasher</a></li>
+            <li><a href="Flashing.html">
+              <span class="lang-en">Flasher</span>
+              <span class="lang-es">Flasher</span>
+            </a></li>
           </ul>
         </div>
         <a class="btn btn-ghost text-xl" href="index.html">XOTLA</a>
@@ -46,24 +67,48 @@ class MainNavbar extends HTMLElement {
       
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-          <li><a href="index.html">Home</a></li>
-          <li><a>Showcase</a></li>
+          <li><a href="index.html">
+            <span class="lang-en">Home</span>
+            <span class="lang-es">Inicio</span>
+          </a></li>
+          <li><a>
+            <span class="lang-en">Showcase</span>
+            <span class="lang-es">Muestra</span>
+          </a></li>
           <li>
             <details>
-              <summary>Community</summary>
+              <summary>
+                <span class="lang-en">Community</span>
+                <span class="lang-es">Comunidad</span>
+              </summary>
               <ul class="p-2 bg-base-100 w-40 z-1">
-                <li><a href="Tutorials.html">Tutorials</a></li>
-                <li><a>Discord</a></li>
-                <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom">Github</a></li>
+                <li><a href="Tutorials.html">
+                  <span class="lang-en">Tutorials</span>
+                  <span class="lang-es">Tutoriales</span>
+                </a></li>
+                <li><a>
+                  <span class="lang-en">Discord</span>
+                  <span class="lang-es">Discord</span>
+                </a></li>
+                <li><a href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom">
+                  <span class="lang-en">Github</span>
+                  <span class="lang-es">Github</span>
+                </a></li>
               </ul>
             </details>
           </li>
-          <li><a href="Flashing.html">Flasher</a></li>
+          <li><a href="Flashing.html">
+            <span class="lang-en">Flasher</span>
+            <span class="lang-es">Flasher</span>
+          </a></li>
         </ul>
       </div>
       
       <div class="navbar-end">
-        <a class="btn btn-primary">Get Started</a>
+        <a href="Tutorials.html" class="btn btn-primary">
+          <span class="lang-en">Get Started</span>
+          <span class="lang-es">Comenzar</span>
+        </a>
       </div>
     </div>
     `;
