@@ -57,10 +57,10 @@ class MainNavbar extends HTMLElement {
         </div>
         <a class="btn btn-ghost text-xl" href="index.html">XOTLA</a>
         
-        <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-35 border p-4">
+        <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-30 border p-1">
           <label class="label cursor-pointer">
             <input id="lang-toggle" type="checkbox" class="toggle border-indigo-600 bg-indigo-500 checked:border-red-500 checked:bg-red-400 checked:text-red-800" /> 
-            <span id="lang-label" class="ml-2 font-bold">ENGLISH</span>
+            <span id="lang-label" class="ml-1 font-bold">ENGLISH</span>
           </label>
         </fieldset>
       </div>
@@ -126,14 +126,14 @@ class MainNavbar extends HTMLElement {
     // Aplicar estado inicial
     document.documentElement.setAttribute('lang', savedLang);
     toggle.checked = (savedLang === 'es');
-    label.textContent = savedLang === 'en' ? 'ENGLISH' : 'ESPAÑOL';
+    label.textContent = savedLang === 'en' ? 'EN' : 'ES';
 
     // Escuchar cambios en el toggle
     toggle.addEventListener('change', (e) => {
       const newLang = e.target.checked ? 'es' : 'en';
       document.documentElement.setAttribute('lang', newLang);
       localStorage.setItem('xotla-lang', newLang);
-      label.textContent = newLang === 'en' ? 'ENGLISH' : 'ESPAÑOL';
+      label.textContent = newLang === 'en' ? 'EN' : 'ES';
     });
   }
 }
