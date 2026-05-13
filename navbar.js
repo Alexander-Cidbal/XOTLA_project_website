@@ -57,7 +57,7 @@ class MainNavbar extends HTMLElement {
         </div>
         <a class="btn btn-ghost text-xl" href="index.html">XOTLA</a>
         
-        <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-30 border p-1">
+        <fieldset class="fieldset bg-base-100 border-base-300 rounded-box w-23 border p-1">
           <label class="label cursor-pointer">
             <input id="lang-toggle" type="checkbox" class="toggle border-indigo-600 bg-indigo-500 checked:border-red-500 checked:bg-red-400 checked:text-red-800" /> 
             <span id="lang-label" class="ml-1 font-bold">ENGLISH</span>
