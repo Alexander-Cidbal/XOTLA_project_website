@@ -3074,6 +3074,12 @@
       text-align: left;
     }
   }
+  .lg\:text-7xl {
+    @media (width >= 64rem) {
+      font-size: var(--text-7xl);
+      line-height: var(--tw-leading, var(--text-7xl--line-height));
+    }
+  }
 }
 @layer base {
   :where(:root),:root:has(input.theme-controller[value=light]:checked),[data-theme=light] {
