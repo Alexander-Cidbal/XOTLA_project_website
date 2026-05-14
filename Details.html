@@ -9,28 +9,56 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/output.css">
+  
+  <!-- PASO 2: Import Map (Configuración de módulos) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
   <script src="navbar.js" defer></script>
   <script src="footer.js" defer></script>
 </head>
 <body class="bg-base-200 min-h-screen">
   <main-navbar></main-navbar>
 
-  <!-- Hero Section for Content -->
   <section class="hero min-h-[calc(100vh-64px)] bg-base-300">
-    <div class="hero-content text-center">
-      <div class="max-w-md">
+    <div class="hero-content flex-col lg:flex-row gap-10 w-full max-w-6xl">
+      
+      <!-- Lado izquierdo: Texto informativo -->
+      <div class="text-center lg:text-left max-w-md">
         <h1 class="text-5xl font-bold text-primary mb-6">
-          <span class="lang-en">Details Page</span>
-          <span class="lang-es">Página de Detalles</span>
+          <span class="lang-en">XOTLA Design</span>
+          <span class="lang-es">Diseño XOTLA</span>
         </h1>
-        <!-- START: Add your content here -->
-        <p class="py-6 text-lg"><span class="lang-en">This is where your specific content for this page will go.</span><span class="lang-es">Aquí es donde irá tu contenido específico para esta página.</span></p>
-        
-        <!-- END: Add your content here -->
+        <p class="py-6 text-lg">
+          <span class="lang-en">Interactive 3D prototype of the XTL-01 hardware sampler.</span>
+          <span class="lang-es">Prototipo 3D interactivo del sampler de hardware XTL-01.</span>
+        </p>
+        <button class="btn btn-primary">Download Specs</button>
       </div>
+
+      <!-- Lado derecho: El Visor 3D -->
+      <div class="card w-full lg:w-2/3 bg-base-100 shadow-2xl border border-primary/100 overflow-hidden h-[600px] relative">
+        <!-- Loader de DaisyUI -->
+        <div id="loader" class="absolute inset-0 flex flex-col items-center justify-center bg-base-300 z-10 transition-opacity duration-500">
+          <span class="loading loading-dots loading-lg text-primary"></span>
+          <p class="mt-4 text-xs uppercase tracking-widest opacity-50">Loading Prototype</p>
+        </div>
+        <!-- Contenedor de Three.js -->
+        <div id="three-container" class="w-full h-full cursor-grab active:cursor-grabbing"></div>
+      </div>
+
     </div>
   </section>
 
   <main-footer></main-footer>
+
+  <!-- Script de implementación (Paso 3) -->
+  <script type="module" src="viewer.js"></script>
 </body>
 </html>
