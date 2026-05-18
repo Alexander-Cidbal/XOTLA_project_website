@@ -39,6 +39,10 @@ class MainNavbar extends HTMLElement {
                   <span class="lang-en">Tutorials</span>
                   <span class="lang-es">Tutoriales</span>
                 </a></li>
+                <li><a href="./Wiki/index.html" target="_blank" rel="noopener noreferrer">
+                  <span class="lang-en">Wiki</span>
+                  <span class="lang-es">Wiki</span>
+                </a></li>
                 <li><a href="https://discord.gg/2Ecx7sF5" target="_blank" rel="noopener noreferrer">
                   <span class="lang-en">Discord</span>
                   <span class="lang-es">Discord</span>
@@ -85,6 +89,10 @@ class MainNavbar extends HTMLElement {
                 <li><a href="Tutorials.html">
                   <span class="lang-en">Tutorials</span>
                   <span class="lang-es">Tutoriales</span>
+                </a></li>
+                <li><a href="./Wiki/index.html" target="_blank" rel="noopener noreferrer">
+                  <span class="lang-en">Wiki</span>
+                  <span class="lang-es">Wiki</span>
                 </a></li>
                 <li><a href="https://discord.gg/2Ecx7sF5" target="_blank" rel="noopener noreferrer">
                   <span class="lang-en">Discord</span>
