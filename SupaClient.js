@@ -37,8 +37,8 @@
             const tableBody = document.getElementById('supabase-table-body');
             if (!tableBody) return;
             
-            if (!data || data.length === 0) {
-                tableBody.innerHTML = `<tr><td colspan="3" class="text-center">No hay datos disponibles</td></tr>`;
+            if (!data || data.length === 0 || Object.keys(data[0]).length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="4" class="text-center">No hay datos disponibles</td></tr>`;
                 return;
             }
 
@@ -49,12 +49,31 @@
                         <td>${values[0] !== undefined ? values[0] : '-'}</td>
                         <td>${values[1] !== undefined ? values[1] : '-'}</td>
                         <td>${values[2] !== undefined ? values[2] : '-'}</td>
+                        <td>${values[3] !== undefined ? values[3] : '-'}</td>
                     </tr>
                 `;
             }).join('');
         }
 
+        // Función para escuchar cambios en tiempo real
+        function suscribirRealtime() {
+            supabaseClient
+                .channel('cambios-tabla-1')
+                .on(
+                    'postgres_changes',
+                    { event: '*', schema: 'public', table: 'table_1' },
+                    (payload) => {
+                        console.log('Cambio detectado en tiempo real:', payload);
+                        cargarDatos(); // Refrescamos la tabla completa al detectar un cambio
+                    }
+                )
+                .subscribe();
+        }
+
         // Ejecutar al cargar la página
-        document.addEventListener('DOMContentLoaded', cargarDatos);
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarDatos();
+            suscribirRealtime();
+        });
     }
 }
