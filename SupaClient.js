@@ -9,7 +9,11 @@
         console.error('La librería de Supabase no se cargó correctamente.');
         document.addEventListener('DOMContentLoaded', () => {
             const tbody = document.getElementById('supabase-table-body');
-            if (tbody) tbody.innerHTML = `<tr><td colspan="3" class="text-error text-center">Error: Librería no cargada</td></tr>`;
+            if (tbody) tbody.innerHTML = `
+                <tr><td colspan="4" class="text-error text-center">
+                    <span class="lang-en">Error: Library not loaded</span>
+                    <span class="lang-es">Error: Librería no cargada</span>
+                </td></tr>`;
         });
     } else {
         const supabaseClient = supabase.createClient(S_URL, S_KEY);
@@ -23,7 +27,11 @@
             if (error) {
                 console.error('Error al obtener datos de Supabase:', error);
                 const tbody = document.getElementById('supabase-table-body');
-                if (tbody) tbody.innerHTML = `<tr><td colspan="3" class="text-error text-center">Error al cargar datos: ${error.message}</td></tr>`;
+                if (tbody) tbody.innerHTML = `
+                    <tr><td colspan="4" class="text-error text-center">
+                        <span class="lang-en">Error loading data: ${error.message}</span>
+                        <span class="lang-es">Error al cargar datos: ${error.message}</span>
+                    </td></tr>`;
                 return;
             } else {
                 console.log('Datos obtenidos de Supabase:', data); // Para depuración
@@ -38,7 +46,11 @@
             if (!tableBody) return;
             
             if (!data || data.length === 0 || Object.keys(data[0]).length === 0) {
-                tableBody.innerHTML = `<tr><td colspan="4" class="text-center">No hay datos disponibles</td></tr>`;
+                tableBody.innerHTML = `
+                    <tr><td colspan="4" class="text-center">
+                        <span class="lang-en">No data available</span>
+                        <span class="lang-es">No hay datos disponibles</span>
+                    </td></tr>`;
                 return;
             }
 
