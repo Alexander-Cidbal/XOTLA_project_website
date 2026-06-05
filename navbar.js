@@ -113,7 +113,7 @@ class MainNavbar extends HTMLElement {
       </div>
       
       <div class="navbar-end">
-        <a href="Tutorials.html" class="btn btn-primary">
+        <a href="Tutorials.html" class="buttonglow">
           <span class="lang-en">Get Started</span>
           <span class="lang-es">Comenzar</span>
         </a>

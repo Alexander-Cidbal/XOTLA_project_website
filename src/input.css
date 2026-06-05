@@ -37,3 +37,48 @@
   --depth: 0;
   --noise: 0;
 }
+
+.buttonglow {
+  width: fit-content;
+  min-width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: rgb(160, 252, 81);
+  border-radius: 30px;
+  color: rgb(19, 19, 19);
+  font-weight: 600;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  padding-right: 16px;
+  transition-duration: .5s;
+}
+
+.svgIcon {
+  height: 25px;
+  transition-duration: 1.5s;
+  fill: rgb(19, 19, 19);
+}
+
+.buttonglow:hover {
+  color: #FFFFD6;
+  background: #B0F562;
+  border: 1px solid #7DBA22;
+  text-shadow: 0 0 5px #61612F, 0 0 10px #CCCC87, 0 0 20px #CCCC87;
+  box-shadow: 0 0 5px #C1FF57, 0 0 20px #C1FF57, 0 0 50px #C1FF57, 0 0 100px #7AB227;
+}
+
+.buttonglow:active {
+  transform: scale(0.87);
+}
+
+.buttonglow:hover .svgIcon {
+  transform: rotate(360deg);
+  transition-duration: .8s;
+  fill: rgb(255, 255, 214);
+}
