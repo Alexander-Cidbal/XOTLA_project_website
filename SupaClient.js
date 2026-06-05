@@ -17,7 +17,7 @@
         // Función para obtener los datos
         async function cargarDatos() {
             const { data, error } = await supabaseClient // Corregido: antes decía 'supabase'
-                .from('table_1')
+                .from('Releases')
                 .select('*');
 
             if (error) {
@@ -43,13 +43,19 @@
             }
 
             tableBody.innerHTML = data.map(item => {
-                const values = Object.values(item);
                 return `
                     <tr>
-                        <td>${values[0] !== undefined ? values[0] : '-'}</td>
-                        <td>${values[1] !== undefined ? values[1] : '-'}</td>
-                        <td>${values[2] !== undefined ? values[2] : '-'}</td>
-                        <td>${values[3] !== undefined ? values[3] : '-'}</td>
+                        <td>${item.Version ?? '-'}</td>
+                        <td>${item.Alias ?? '-'}</td>
+                        <td>${item.created_at ?? '-'}</td>
+                        <td>
+                            ${item.Link 
+                                ? `<a href="${item.Link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary btn-xs">
+                                    <span class="lang-en">Download</span>
+                                    <span class="lang-es">Descargar</span>
+                                   </a>` 
+                                : '-'}
+                        </td>
                     </tr>
                 `;
             }).join('');
@@ -61,7 +67,7 @@
                 .channel('cambios-tabla-1')
                 .on(
                     'postgres_changes',
-                    { event: '*', schema: 'public', table: 'table_1' },
+                    { event: '*', schema: 'public', table: 'Releases' },
                     (payload) => {
                         console.log('Cambio detectado en tiempo real:', payload);
                         cargarDatos(); // Refrescamos la tabla completa al detectar un cambio

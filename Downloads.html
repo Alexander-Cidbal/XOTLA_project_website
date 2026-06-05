@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+<head>
+  <link rel="icon" type="image/x-icon" href="./Files/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XOTLA - Downloads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/output.css">
+
+  <script src="navbar.js" defer></script>
+  <script src="footer.js" defer></script>
+  <!-- Supabase Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="SupaClient.js" defer></script>
+  <script src="table-resizer.js" defer></script>
+</head>
+<body class="bg-base-200 min-h-screen">
+  <main-navbar></main-navbar>
+
+  <section class="hero min-h-[calc(100vh-64px)] bg-base-300" style="background-image: url('./Files/Bloom_Back2.jpg');">
+    <div class="hero-overlay bg-opacity-60 backdrop-blur-md"></div>
+    <div class="hero-content flex-col lg:flex-row gap-10 w-full max-w-6xl">
+      <div class="card w-full bg-base-100 shadow-xl overflow-hidden">
+        <div class="card-body">
+          <h2 class="card-title text-primary">Downloads</h2>
+          <div class="overflow-x-auto">
+            <table class="table table-zebra w-full">
+              <thead>
+                <tr>
+                  <th>Version</th>
+                  <th>Alias</th>
+                  <th>Fecha</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody id="supabase-table-body">
+                <!-- Los datos se cargarán aquí -->
+                <tr>
+                  <td colspan="4" class="text-center italic">Cargando datos...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>

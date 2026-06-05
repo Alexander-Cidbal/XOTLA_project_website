@@ -53,6 +53,11 @@ class MainNavbar extends HTMLElement {
                 </a></li>
               </ul>
             </li>
+            
+            <li><a href="Downloads.html">
+              <span class="lang-en">Downloads</span>
+              <span class="lang-es">Descargas</span>
+            </a></li>
             <li><a href="Flashing.html">
               <span class="lang-en">Flasher</span>
               <span class="lang-es">Flasher</span>
@@ -105,6 +110,11 @@ class MainNavbar extends HTMLElement {
               </ul>
             </details>
           </li>
+          
+          <li><a href="Downloads.html">
+            <span class="lang-en">Downloads</span>
+            <span class="lang-es">Descargas</span>
+          </a></li>
           <li><a href="Flashing.html">
             <span class="lang-en">Flasher</span>
             <span class="lang-es">Flasher</span>
