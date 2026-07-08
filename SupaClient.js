@@ -44,7 +44,7 @@
         function renderizarDatos(data) {
             const tableBody = document.getElementById('supabase-table-body');
             if (!tableBody) return;
-            
+
             if (!data || data.length === 0 || Object.keys(data[0]).length === 0) {
                 tableBody.innerHTML = `
                     <tr><td colspan="4" class="text-center">
@@ -61,12 +61,22 @@
                         <td>${item.Alias ?? '-'}</td>
                         <td>${item.created_at ?? '-'}</td>
                         <td>
-                            ${item.Link 
-                                ? `<a href="${item.Link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary btn-xs">
+                            ${item.Link
+                        ? `<a href="${item.Link}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary btn-xs">
                                     <span class="lang-en">Download</span>
                                     <span class="lang-es">Descargar</span>
-                                   </a>` 
-                                : '-'}
+                                   </a>`
+
+                        : '-'}
+                        </td>
+                        <td>
+                            ${item.Link
+                        ? `<a href="Flashing.html" class="btn btn-outline btn-primary btn-xs">
+                                    <span class="lang-en">Flasher</span>
+                                    <span class="lang-es">Flasher</span>
+                                   </a>`
+
+                        : '-'}
                         </td>
                     </tr>
                 `;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="forest">
+
 <head>
   <link rel="icon" type="image/x-icon" href="./Files/favicon.ico">
   <meta charset="UTF-8" />
@@ -7,7 +8,9 @@
   <title>XOTLA - Downloads</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./src/output.css">
 
   <script src="navbar.js" defer></script>
@@ -17,15 +20,40 @@
   <script src="SupaClient.js" defer></script>
   <script src="table-resizer.js" defer></script>
 </head>
+
 <body class="bg-base-200 min-h-screen">
   <main-navbar></main-navbar>
 
-  <section class="hero min-h-[calc(100vh-64px)] bg-base-300" style="background-image: url('./Files/Bloom_Back2.jpg');">
+  <section class="hero min-h-[calc(100vh-65px)] bg-base-300" style="background-image: url('./Files/Bloom_Back2.jpg');">
     <div class="hero-overlay bg-opacity-60 backdrop-blur-md"></div>
-    <div class="hero-content flex-col lg:flex-row gap-10 w-full max-w-6xl">
+    <div class="hero-content flex-col gap-5 w-full max-w-6xl">
+
+
+      <div class="card w-full bg-base-100 shadow-xl overflow-hidden"
+        style="background-image: url('./Files/lava_background.png');">
+        <div class="card-body backdrop-blur-sm">
+
+          <div class="overflow-x-auto">
+            <h1 class="text-5xl font-bold text-primary mb-12 text-center">
+              <span class="lang-en">Downloads</span>
+              <span class="lang-es">Descargas</span>
+            </h1>
+            <p class="text-lg md:text-xl opacity-90 text-center">
+              <span class="lang-en">Find the latest firmware releases, documentation, and tools for your XOTLA DIY
+                sampler.</span>
+              <span class="lang-es">Encuentra las últimas versiones de firmware, documentación y herramientas para tu
+                sampler DIY XOTLA.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div class="card w-full bg-base-100 shadow-xl overflow-hidden">
         <div class="card-body">
-          <h2 class="card-title text-primary">Downloads</h2>
+          <h2 class="text-3xl mb-6 text-primary text-center">
+            <span class="lang-en">Bloomcore Firmware </span>
+            <span class="lang-es"> Firmware Bloomcore</span>
+          </h2>
           <div class="overflow-x-auto">
             <table class="table table-zebra w-full">
               <thead>
@@ -45,6 +73,10 @@
                   <th>
                     <span class="lang-en">Link</span>
                     <span class="lang-es">Enlace</span>
+                  </th>
+                  <th>
+                    <span class="lang-en">Flash</span>
+                    <span class="lang-es">Flashear</span>
                   </th>
                 </tr>
               </thead>
@@ -66,4 +98,5 @@
 
 
 </body>
+
 </html>
