@@ -1,8 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
+
 @plugin "daisyui/theme" {
   name: "forest";
   default: false;
@@ -81,4 +83,112 @@
   transform: rotate(360deg);
   transition-duration: .8s;
   fill: rgb(255, 255, 214);
+}
+
+/* From Uiverse.io by david-mohseni */
+.wrapper_btns {
+  display: inline-flex;
+  list-style: none;
+  height: 60px;
+  width: 115px;
+  padding-top: 0px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+
+  border-radius: 5%;
+
+}
+
+.wrapper_btns .icon {
+  position: relative;
+  background: #ffffff40;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30%;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper_btns .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper_btns .icon:hover .tooltip {
+  top: -36px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper_btns .icon:hover span,
+.wrapper_btns .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+
+}
+
+.wrapper_btns .download:hover,
+.wrapper_btns .download:hover .tooltip,
+.wrapper_btns .download:hover .tooltip::before {
+  background: #8ed238;
+  color: #fff;
+
+}
+
+.wrapper_btns .download:hover {
+  transform: scale(1.09);
+  box-shadow: 0 11px 10px rgba(0, 0, 0, 0.4);
+}
+
+.wrapper_btns .download:active {
+  transform: scale(0.975);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+.wrapper_btns .flash:hover,
+.wrapper_btns .flash:hover .tooltip,
+.wrapper_btns .flash:hover .tooltip::before {
+  background: #e05c98;
+  color: #fff;
+}
+
+
+.wrapper_btns .flash:hover {
+  transform: scale(1.09);
+  box-shadow: 0 11px 10px rgba(0, 0, 0, 0.4);
+}
+
+.wrapper_btns .flash:active {
+  transform: scale(0.975);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
