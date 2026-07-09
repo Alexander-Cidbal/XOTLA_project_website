@@ -3474,7 +3474,7 @@
 }
 .wrapper_btns .download:hover {
   transform: scale(1.09);
-  box-shadow: 0 11px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px #C1FF57, 0 0 20px #C1FF57, 0 0 50px #C1FF57, 0 0 100px #7AB227;
 }
 .wrapper_btns .download:active {
   transform: scale(0.975);
@@ -3486,7 +3486,7 @@
 }
 .wrapper_btns .flash:hover {
   transform: scale(1.09);
-  box-shadow: 0 11px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px #ff57a5, 0 0 20px #ff578f, 0 0 50px #ff57ab, 0 0 100px #b22788;
 }
 .wrapper_btns .flash:active {
   transform: scale(0.975);
