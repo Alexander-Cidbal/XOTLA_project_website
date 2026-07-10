@@ -1,26 +1,27 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
+
 @plugin "daisyui/theme" {
   name: "forest";
-  default: true;
-  prefersdark: true;
+  default: false;
+  prefersdark: false;
   color-scheme: "dark";
   --color-base-100: oklch(20.84% 0.008 17.911);
   --color-base-200: oklch(18.522% 0.007 17.911);
   --color-base-300: oklch(16.203% 0.007 17.911);
   --color-base-content: oklch(83.768% 0.001 17.911);
-  --color-primary: oklch(68.628% 0.185 148.958);
+  --color-primary: oklch(79.1% 0.193 130.850);
   --color-primary-content: oklch(0% 0 0);
-  --color-secondary: oklch(69.776% 0.135 168.327);
+  --color-secondary: oklch(53% 0.157 131.589);
   --color-secondary-content: oklch(13.955% 0.027 168.327);
-  --color-accent: oklch(70.628% 0.119 185.713);
+  --color-accent: oklch(79% 0.209 151.711);
   --color-accent-content: oklch(14.125% 0.023 185.713);
-  --color-neutral: oklch(30.698% 0.039 171.364);
+  --color-neutral: oklch(30.7% 0.039 137.700);
   --color-neutral-content: oklch(86.139% 0.007 171.364);
   --color-info: oklch(72.06% 0.191 231.6);
   --color-info-content: oklch(0% 0 0);
-  --color-success: oklch(64.8% 0.15 160);
+  --color-success: oklch(64.8% 0.150 143.900);
   --color-success-content: oklch(0% 0 0);
   --color-warning: oklch(84.71% 0.199 83.87);
   --color-warning-content: oklch(0% 0 0);
@@ -35,7 +36,6 @@
   --depth: 0;
   --noise: 0;
 }
-
 
 
 body {
@@ -61,71 +61,135 @@ body {
   font-size: 1rem;
   font-weight: 600;
   font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, oklch(68.628% 0.185 148.958), oklch(70.628% 0.119 185.713));
+  background: linear-gradient(135deg, oklch(68.628% 0.185 148.958), rgb(160, 252, 81));
   color: #000;
-  box-shadow: 0 0 14px oklch(68.628% 0.185 148.958 / 0.6), 0 0 30px oklch(70.628% 0.119 185.713 / 0.3);
+  box-shadow: 0 0 14px oklch(69.852% 0.19862 136.567 / 0.6), 0 0 30px oklch(70.628% 0.119 185.713 / 0.3);
   transition: box-shadow 0.3s ease, transform 0.2s ease;
   text-decoration: none;
 }
 
 .buttonglow:hover {
-  box-shadow: 0 0 22px oklch(68.628% 0.185 148.958 / 0.8), 0 0 50px oklch(70.628% 0.119 185.713 / 0.5);
+  border: 2px solid #63626260;
+  box-shadow: 0 0 5px #73ff57, 0 0 20px #C1FF57, 0 0 50px #7eff57, 0 0 100px #27b227;
   transform: translateY(-2px);
+
 }
 
 .buttonglow .svgIcon {
   fill: #000;
 }
 
+.buttonglow:hover .svgIcon {
+  transform: rotate(360deg);
+  transition-duration: .8s;
+
+}
+
 .wrapper_btns {
-  display: flex;
-  gap: 0.5rem;
+  display: inline-flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  height: 60px;
+  width: 115px;
+  padding-top: 0px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+
+  border-radius: 5%;
+
 }
 
 .wrapper_btns .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: oklch(30.698% 0.039 171.364);
-  color: oklch(86.139% 0.007 171.364);
   position: relative;
-  transition: background 0.2s, transform 0.2s;
+  background: #ffffff40;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30%;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.wrapper_btns .icon:hover {
-  background: oklch(68.628% 0.185 148.958);
-  color: #000;
-  transform: translateY(-3px);
-}
-
-.wrapper_btns .icon .tooltip {
-  visibility: hidden;
-  opacity: 0;
-  background: oklch(16.203% 0.007 17.911);
-  color: oklch(83.768% 0.001 17.911);
-  text-align: center;
-  border-radius: 6px;
-  padding: 4px 8px;
+.wrapper_btns .tooltip {
   position: absolute;
-  bottom: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  font-size: 0.75rem;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .wrapper_btns .icon:hover .tooltip {
-  visibility: visible;
+  top: -36px;
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper_btns .icon:hover span,
+.wrapper_btns .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+
+}
+
+.wrapper_btns .download:hover,
+.wrapper_btns .download:hover .tooltip,
+.wrapper_btns .download:hover .tooltip::before {
+  background: #8ed238;
+  color: #fff;
+
+}
+
+.wrapper_btns .download:hover {
+  transform: scale(1.09);
+  box-shadow: 0 0 5px #C1FF57, 0 0 20px #C1FF57, 0 0 50px #C1FF57, 0 0 100px #7AB227;
+}
+
+.wrapper_btns .download:active {
+  transform: scale(0.975);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+.wrapper_btns .flash:hover,
+.wrapper_btns .flash:hover .tooltip,
+.wrapper_btns .flash:hover .tooltip::before {
+  background: #e05c98;
+  color: #fff;
+}
+
+
+.wrapper_btns .flash:hover {
+  transform: scale(1.09);
+  box-shadow: 0 0 5px #ff57a5, 0 0 20px #ff578f, 0 0 50px #ff57ab, 0 0 100px #b22788;
+}
+
+.wrapper_btns .flash:active {
+  transform: scale(0.975);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
 
 #status {
@@ -141,4 +205,3 @@ progress {
   width: 100%;
   height: 20px;
 }
-
