@@ -4,8 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer footer-center bg-base-300 text-base-content p-6 mt-auto">
-      <aside>
+<footer className="footer footer-center bg-base-100 text-base-content p-6 mt-auto">      <aside>
         <p className="font-bold text-lg">XOTLA</p>
         <p className="text-sm opacity-60">
           <T
@@ -17,7 +16,7 @@ export default function Footer() {
       <nav>
         <div className="grid grid-flow-col gap-4">
           <a
-            href="https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom"
+            href="https://github.com/Alexander-Cidbal/RZK_XOTLA_Beatmachine"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"

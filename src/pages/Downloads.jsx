@@ -36,83 +36,88 @@ export default function Downloads() {
           </h1>
           <p className="text-xl opacity-70 max-w-xl mx-auto">
             <T
-              en="Get the latest XOTLA firmware releases. Updates are reflected in real-time."
-              es="Obtén las últimas versiones del firmware XOTLA. Las actualizaciones se reflejan en tiempo real."
+              en="Find the latest firmware releases, documentation, and tools for your XOTLA DIY sampler."
+              es="Encuentra las últimas versiones de firmware, documentación y herramientas para tu sampler DIY XOTLA."
             />
           </p>
         </div>
       </section>
 
-      {/* Table */}
-      <section className="py-12 bg-base-200">
-        <div className="container mx-auto px-4 overflow-x-auto">
-          <table className="table table-zebra w-full">
-            <thead>
-              <tr>
-                <th><T en="Version" es="Versión" /></th>
-                <th><T en="Alias" es="Alias" /></th>
-                <th><T en="Date" es="Fecha" /></th>
-                <th><T en="Actions" es="Acciones" /></th>
-              </tr>
-            </thead>
-            <tbody id="supabase-table-body">
-              {loading && (
-                <tr>
-                  <td colSpan={4} className="text-center py-10">
-                    <span className="loading loading-spinner loading-md text-primary"></span>
-                  </td>
-                </tr>
-              )}
-              {error && (
-                <tr>
-                  <td colSpan={4} className="text-error text-center py-6">
-                    <T en={`Error loading data: ${error}`} es={`Error al cargar datos: ${error}`} />
-                  </td>
-                </tr>
-              )}
-              {!loading && !error && releases.length === 0 && (
-                <tr>
-                  <td colSpan={4} className="text-center py-6">
-                    <T en="No data available" es="No hay datos disponibles" />
-                  </td>
-                </tr>
-              )}
-              {!loading && !error && releases.map((item) => (
-                <tr key={item.id ?? item.Version}>
-                  <td className="font-mono font-semibold text-primary">{item.Version ?? '-'}</td>
-                  <td>{item.Alias ?? '-'}</td>
-                  <td>{formatDate(item.created_at)}</td>
-                  <td>
-                    {item.Link ? (
-                      <ul className="wrapper_btns">
-                        <li className="icon download">
-                          <a href={item.Link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full">
-                            <span className="tooltip">
-                              <T en="Download" es="Descargar" />
-                            </span>
-                            <DownloadIcon />
-                          </a>
-                        </li>
-                        <li className="icon flash">
-                          <Link to="/flashing" className="flex items-center justify-center w-full h-full">
-                            <span className="tooltip">
-                              <T en="Flash" es="Flashear" />
-                            </span>
-                            <FlashIcon />
-                          </Link>
-                        </li>
-                      </ul>
-                    ) : '-'}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      {/* Hero */}
+      <section className="py-12 bg-base-300">
+        <div className="container mx-auto px-4 overflow-hidden">
+          <div className="card w-full bg-base-100 shadow-xl">
+            <div className="card-body">
+              <h2 className="text-3xl mb-6 text-primary text-center">
+                <T en="Bloomcore Firmware" es="Firmware Bloomcore" />
+              </h2>
+              <table className="table table-zebra w-full">
+                <thead>
+                  <tr>
+                    <th><T en="Version" es="Versión" /></th>
+                    <th><T en="Alias" es="Alias" /></th>
+                    <th><T en="Date" es="Fecha" /></th>
+                    <th><T en="Actions" es="Acciones" /></th>
+                  </tr>
+                </thead>
+                <tbody id="supabase-table-body">
+                  {/* Los datos se cargarán aquí */}
+                  {loading && (
+                    <tr>
+                      <td colSpan={4} className="text-center py-10">
+                        <span className="loading loading-spinner loading-md text-primary"></span>
+                      </td>
+                    </tr>
+                  )}
+                  {error && (
+                    <tr>
+                      <td colSpan={4} className="text-error text-center py-6">
+                        <T en={`Error loading data: ${error}`} es={`Error al cargar datos: ${error}`} />
+                      </td>
+                    </tr>
+                  )}
+                  {!loading && !error && releases.length === 0 && (
+                    <tr>
+                      <td colSpan={4} className="text-center py-6">
+                        <T en="No data available" es="No hay datos disponibles" />
+                      </td>
+                    </tr>
+                  )}
+                  {!loading && !error && releases.map((item) => (
+                    <tr key={item.id ?? item.Version}>
+                      <td className="font-mono font-semibold text-primary">{item.Version ?? '-'}</td>
+                      <td>{item.Alias ?? '-'}</td>
+                      <td>{formatDate(item.created_at)}</td>
+                      <td>
+                        {item.Link ? (
+                          <ul className="wrapper_btns">
+                            <li className="icon download">
+                              <a href={item.Link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full">
+                                <span className="tooltip">
+                                  <T en="Download" es="Descargar" />
+                                </span>
+                                <DownloadIcon />
+                              </a>
+                            </li>
+                            <li className="icon flash">
+                              <Link to="/flashing" className="flex items-center justify-center w-full h-full">
+                                <span className="tooltip">
+                                  <T en="Flash" es="Flashear" />
+                                </span>
+                                <FlashIcon />
+                              </Link>
+                            </li>
+                          </ul>
+                        ) : '-'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
-
-
-
 
     </>
   );

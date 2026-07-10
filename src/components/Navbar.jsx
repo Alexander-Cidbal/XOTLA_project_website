@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import React from 'react'; // Add this import
 import { useLang, T } from '../context/LanguageContext';
 
 export default function Navbar() {
@@ -7,17 +8,25 @@ export default function Navbar() {
 
   const isActive = (path) => location.pathname === path;
 
-  const navLinks = [
+const navLinks = [
     { path: '/', labelEn: 'Home', labelEs: 'Inicio' },
     { path: '/details', labelEn: 'Showcase', labelEs: 'Muestra' },
+    // Community will now be handled separately for placement consistency
     { path: '/downloads', labelEn: 'Downloads', labelEs: 'Descargas' },
     { path: '/flashing', labelEn: 'Flasher', labelEs: 'Flasher' },
   ];
 
   const communityLinks = [
     { href: '/tutorials', labelEn: 'Tutorials', labelEs: 'Tutoriales', internal: true },
-    { href: 'https://github.com/Alexander-Cidbal/RZK-Flame-Spark-Bloom', labelEn: 'GitHub', labelEs: 'GitHub', internal: false },
+    { href: 'https://github.com/Alexander-Cidbal/RZK_XOTLA_Beatmachine', labelEn: 'GitHub', labelEs: 'GitHub', internal: false },
     { href: 'https://discord.gg/2Ecx7sF5', labelEn: 'Discord', labelEs: 'Discord', internal: false },
+  ];
+const mainNavItems = [
+    { path: '/', labelEn: 'Home', labelEs: 'Inicio' },
+    { path: '/details', labelEn: 'Showcase', labelEs: 'Muestra' },
+    { isCommunity: true, communityLinks: communityLinks, labelEn: 'Community', labelEs: 'Comunidad' },
+    { path: '/downloads', labelEn: 'Downloads', labelEs: 'Descargas' },
+    { path: '/flashing', labelEn: 'Flasher', labelEs: 'Flasher' },
   ];
 
   return (
@@ -32,28 +41,32 @@ export default function Navbar() {
             </svg>
           </div>
           <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-            {navLinks.map(link => (
-              <li key={link.path}>
-                <Link to={link.path} className={isActive(link.path) ? 'active' : ''}>
-                  <T en={link.labelEn} es={link.labelEs} />
-                </Link>
-              </li>
-            ))}
-            <li>
-              <a><T en="Community" es="Comunidad" /></a>
-              <ul className="p-2">
-                {communityLinks.map(link => (
-                  <li key={link.href}>
-                    {link.internal
-                      ? <Link to={link.href}><T en={link.labelEn} es={link.labelEs} /></Link>
-                      : <a href={link.href} target="_blank" rel="noopener noreferrer"><T en={link.labelEn} es={link.labelEs} /></a>
-                    }
+            {mainNavItems.map((item, index) => (
+              <React.Fragment key={index}>
+                {item.isCommunity ? (
+                  <li className="border-t pt-2 mt-1"><a onClick={() => { /* Prevent navigation if opening dropdown */ }}><T en={item.labelEn} es={item.labelEs} /></a>
+                    <ul className="p-2">
+                      {item.communityLinks.map(link => (
+                        <li key={link.href}>
+                          {link.internal
+                            ? <Link to={link.href} className="block p-1"><T en={link.labelEn} es={link.labelEs} /></Link>
+                            : <a href={link.href} target="_blank" rel="noopener noreferrer" className="block p-1"><T en={link.labelEn} es={link.labelEs} /></a>
+                          }
+                        </li>
+                      ))}
+                    </ul>
                   </li>
-                ))}
-              </ul>
-            </li>
+                ) : (
+                  <li key={`nav-${item.path}`}>
+                    <Link to={item.path} className={isActive(item.path) ? 'active' : ''}>
+                      <T en={item.labelEn} es={item.labelEs} />
+                    </Link>
+                  </li>
+                )}
+              </React.Fragment>
+            ))}
           </ul>
-        </div>
+        </div >
 
         {/* Logo */}
         <Link className="btn btn-ghost text-xl" to="/">XOTLA</Link>
@@ -76,28 +89,33 @@ export default function Navbar() {
       {/* ── Navbar Center (desktop) ── */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          {navLinks.map(link => (
-            <li key={link.path}>
-              <Link to={link.path} className={isActive(link.path) ? 'active' : ''}>
-                <T en={link.labelEn} es={link.labelEs} />
-              </Link>
-            </li>
+          {mainNavItems.map((item, index) => (
+            <React.Fragment key={`nav-${index}`}>
+              {item.isCommunity ? (
+                <li key="community-dropdown">
+                  <details>
+                    <summary className="cursor-pointer"><T en={item.labelEn} es={item.labelEs} /></summary>
+                    <ul className="p-2 bg-base-100 w-40 z-1 border mt-1">
+                      {item.communityLinks.map(link => (
+                        <li key={link.href}>
+                          {link.internal
+                            ? <Link to={link.href} className="block"><T en={link.labelEn} es={link.labelEs} /></Link>
+                            : <a href={link.href} target="_blank" rel="noopener noreferrer" className="block"><T en={link.labelEn} es={link.labelEs} /></a>
+                          }
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                </li>
+              ) : (
+                <li key={`nav-${item.path}`}>
+                  <Link to={item.path} className={isActive(item.path) ? 'active' : ''}>
+                    <T en={item.labelEn} es={item.labelEs} />
+                  </Link>
+                </li>
+              )}
+            </React.Fragment>
           ))}
-          <li>
-            <details>
-              <summary><T en="Community" es="Comunidad" /></summary>
-              <ul className="p-2 bg-base-100 w-40 z-1">
-                {communityLinks.map(link => (
-                  <li key={link.href}>
-                    {link.internal
-                      ? <Link to={link.href}><T en={link.labelEn} es={link.labelEs} /></Link>
-                      : <a href={link.href} target="_blank" rel="noopener noreferrer"><T en={link.labelEn} es={link.labelEs} /></a>
-                    }
-                  </li>
-                ))}
-              </ul>
-            </details>
-          </li>
         </ul>
       </div>
 

@@ -37,6 +37,7 @@ const tutorials = [
     badgeEs: 'Avanzado',
     color: 'badge-error',
   },
+  
 ];
 
 export default function Tutorials() {
