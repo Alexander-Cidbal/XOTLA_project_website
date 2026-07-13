@@ -6,15 +6,15 @@ const features = [
     icon: '🎹',
     titleEn: 'Keys & Pads',
     titleEs: 'Teclas y Pads',
-    descEn: 'Velocity-sensitive keys and drum pads for expressive performance.',
-    descEs: 'Teclas y pads sensitivos a la velocidad para una interpretación expresiva.',
+    descEn: 'A set of 16 MIDI keys and 8 control keys for expressive performance.',
+    descEs: 'Un conjunto de 16 teclas MIDI y 8 teclas de control para una interpretación expresiva.',
   },
   {
     icon: '🕹️',
     titleEn: 'Joystick & Encoders',
     titleEs: 'Joystick y Encoders',
-    descEn: 'Dual joystick and rotary encoders for pitch bend, modulation and CC control.',
-    descEs: 'Joystick dual y encoders rotativos para pitch bend, modulación y control CC.',
+    descEn: '4 analog joysticks and rotary encoders for pitch bend, modulation and CC control.',
+    descEs: '4 joysticks analógicos y encoders rotativos para pitch bend, modulación y control CC.',
   },
   {
     icon: '🌡️',
@@ -96,12 +96,12 @@ export default function Details() {
           </h2>
           <p className="text-lg opacity-70 mb-8">
             <T
-              en="Flash the firmware and start creating in minutes."
-              es="Flashea el firmware y empieza a crear en minutos."
+              en="Follow our tutorials and start creating in minutes."
+              es="Sigue nuestros tutoriales y empieza a crear en minutos."
             />
           </p>
-          <Link to="/flashing" className="buttonglow text-lg">
-            <T en="Go to Flasher →" es="Ir al Flasher →" />
+          <Link to="/tutorials" className="buttonglow text-lg">
+            <T en="Tutorials →" es="Tutoriales →" />
           </Link>
         </div>
       </section>
