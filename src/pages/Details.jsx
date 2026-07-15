@@ -6,7 +6,7 @@ const features = [
     icon: '🎹',
     titleEn: 'Keys & Pads',
     titleEs: 'Teclas y Pads',
-    descEn: 'A set of 16 MIDI keys and 8 control keys for expressive performance.',
+    descEn: 'A set of 16 MIDI keys and 8 function control keys for expressive performance.',
     descEs: 'Un conjunto de 16 teclas MIDI y 8 teclas de control para una interpretación expresiva.',
   },
   {
