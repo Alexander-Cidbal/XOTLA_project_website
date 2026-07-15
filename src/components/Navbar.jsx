@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import React from 'react'; // Add this import
+import React from 'react';
 import { useLang, T } from '../context/LanguageContext';
 
 export default function Navbar() {
@@ -8,10 +8,9 @@ export default function Navbar() {
 
   const isActive = (path) => location.pathname === path;
 
-const navLinks = [
+  const navLinks = [
     { path: '/', labelEn: 'Home', labelEs: 'Inicio' },
     { path: '/details', labelEn: 'Showcase', labelEs: 'Muestra' },
-    // Community will now be handled separately for placement consistency
     { path: '/downloads', labelEn: 'Downloads', labelEs: 'Descargas' },
     { path: '/flashing', labelEn: 'Flasher', labelEs: 'Flasher' },
   ];
@@ -21,7 +20,8 @@ const navLinks = [
     { href: 'https://github.com/Alexander-Cidbal/RZK_XOTLA_Beatmachine', labelEn: 'GitHub', labelEs: 'GitHub', internal: false },
     { href: 'https://discord.gg/2Ecx7sF5', labelEn: 'Discord', labelEs: 'Discord', internal: false },
   ];
-const mainNavItems = [
+
+  const mainNavItems = [
     { path: '/', labelEn: 'Home', labelEs: 'Inicio' },
     { path: '/details', labelEn: 'Showcase', labelEs: 'Muestra' },
     { isCommunity: true, communityLinks: communityLinks, labelEn: 'Community', labelEs: 'Comunidad' },
@@ -44,7 +44,8 @@ const mainNavItems = [
             {mainNavItems.map((item, index) => (
               <React.Fragment key={index}>
                 {item.isCommunity ? (
-                  <li className="border-t pt-2 mt-1"><a onClick={() => { /* Prevent navigation if opening dropdown */ }}><T en={item.labelEn} es={item.labelEs} /></a>
+                  <li className="border-t pt-2 mt-1">
+                    <a onClick={() => { /* Prevent navigation if opening dropdown */ }}><T en={item.labelEn} es={item.labelEs} /></a>
                     <ul className="p-2">
                       {item.communityLinks.map(link => (
                         <li key={link.href}>
@@ -66,24 +67,35 @@ const mainNavItems = [
               </React.Fragment>
             ))}
           </ul>
-        </div >
-
+        </div>
+      
         {/* Logo */}
         <Link className="btn btn-ghost text-xl" to="/">XOTLA</Link>
 
-        {/* Language toggle */}
-        <fieldset className="fieldset bg-base-100 border-base-300 rounded-box w-23 border p-1">
-          <label className="label cursor-pointer">
+        {/* ── Fancy Language Toggle Adaptado ── */}
+        <div className="ml-2 flex items-center">
+          <label className="group relative flex h-8 w-24 cursor-pointer select-none rounded-full bg-base-200">
             <input
-              id="lang-toggle"
               type="checkbox"
-              className="toggle border-indigo-600 bg-indigo-500 checked:border-red-500 checked:bg-red-400 checked:text-red-800"
+              className="peer hidden appearance-none"
               checked={lang === 'es'}
               onChange={toggleLang}
             />
-            <span className="ml-1 font-bold">{lang === 'en' ? 'EN' : 'ES'}</span>
+            
+            {/* Pastilla deslizante (Transiciona de Indigo a Red) */}
+            <div className="absolute left-0 h-full w-12 rounded-full bg-indigo-500 shadow-md shadow-indigo-400/50 transition-all duration-300 ease-in-out group-hover:shadow-lg peer-checked:left-12 peer-checked:bg-red-500 peer-checked:shadow-red-400/50"></div>
+            
+            {/* Texto: EN */}
+            <span className="relative flex h-full w-12 items-center justify-center text-xs font-bold text-white transition-colors duration-300 peer-checked:text-base-content/70">
+              EN
+            </span>
+            
+            {/* Texto: ES */}
+            <span className="relative flex h-full w-12 items-center justify-center text-xs font-bold text-base-content/70 transition-colors duration-300 peer-checked:text-white">
+              ES
+            </span>
           </label>
-        </fieldset>
+        </div>
       </div>
 
       {/* ── Navbar Center (desktop) ── */}

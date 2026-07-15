@@ -13,6 +13,9 @@ function Mini_Flasher({ item, isOpen, onClose }) {
         <h3 className="font-bold text-lg mb-4">
           <T en="Flashing Tool" es="Herramienta de Flasheo" />
         </h3>
+        <h3 className="text-sm mb-4">
+          <T en="⚠️ Flasher for development, use the main flasher ⚠️" es="⚠️ Herramienta en desarrollo, usa el flasher principal ⚠️" />
+        </h3>
         <div className="space-y-3 text-sm bg-base-200 p-4 rounded-lg">
           <div className="flex justify-between">
             <span className="opacity-70">
@@ -120,7 +123,8 @@ export default function Downloads() {
   return (
     <>
       {/* Header */}
-      <section className="py-20 bg-base-300 text-center">
+      <section className="py-20 bg-base-300 text-center" >
+      
         <div className="container mx-auto px-6">
           <h1 className="text-5xl font-bold text-primary mb-4">
             <T en="Downloads" es="Descargas" />
@@ -136,9 +140,9 @@ export default function Downloads() {
 
       {/* Hero */}
       <section className="py-12 bg-base-300">
-        <div className="container mx-auto px-4 overflow-hidden">
-          <div className="card w-full bg-base-100 shadow-xl">
-            <div className="card-body">
+        <div className="container mx-auto px-6 md:px-40">
+          <div className="card w-full bg-base-100 shadow-xl overflow-x-auto">
+            <div className="card-body overflow-x-auto">
               <h2 className="text-3xl mb-6 text-primary text-center">
                 <T en="Bloomcore Firmware" es="Firmware Bloomcore" />
               </h2>
@@ -211,6 +215,7 @@ export default function Downloads() {
                                     <T en="Download" es="Descargar" />
                                   </span>
                                   <DownloadIcon />
+                                
                                 </a>
                               </li>
                               <li className="icon flash">

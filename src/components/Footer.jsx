@@ -5,13 +5,16 @@ export default function Footer() {
 
   return (
 <footer className="footer footer-center bg-base-100 text-base-content p-6 mt-auto">      <aside>
+
         <p className="font-bold text-lg">XOTLA</p>
         <p className="text-sm opacity-60">
           <T
             en={`© ${currentYear} XOTLA Project. Open-source and built with ❤️`}
             es={`© ${currentYear} Proyecto XOTLA. Código abierto, hecho con ❤️`}
           />
+          
         </p>
+        
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-4">
