@@ -1,0 +1,254 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "forest";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(20.84% 0.008 17.911);
+  --color-base-200: oklch(18.522% 0.007 17.911);
+  --color-base-300: oklch(16.203% 0.007 17.911);
+  --color-base-content: oklch(83.768% 0.001 17.911);
+  --color-primary: oklch(79.1% 0.193 130.850);
+  --color-primary-content: oklch(0% 0 0);
+  --color-secondary: oklch(53% 0.157 131.589);
+  --color-secondary-content: oklch(13.955% 0.027 168.327);
+  --color-accent: oklch(79% 0.209 151.711);
+  --color-accent-content: oklch(14.125% 0.023 185.713);
+  --color-neutral: oklch(30.7% 0.039 137.700);
+  --color-neutral-content: oklch(86.139% 0.007 171.364);
+  --color-info: oklch(72.06% 0.191 231.6);
+  --color-info-content: oklch(0% 0 0);
+  --color-success: oklch(64.8% 0.150 143.900);
+  --color-success-content: oklch(0% 0 0);
+  --color-warning: oklch(84.71% 0.199 83.87);
+  --color-warning-content: oklch(0% 0 0);
+  --color-error: oklch(71.76% 0.221 22.18);
+  --color-error-content: oklch(0% 0 0);
+  --radius-selector: 1rem;
+  --radius-field: 2rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonglow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.6em 1.2em;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, oklch(68.628% 0.185 148.958), rgb(160, 252, 81));
+  color: #000;
+  box-shadow: 0 0 14px oklch(69.852% 0.19862 136.567 / 0.6), 0 0 30px oklch(70.628% 0.119 185.713 / 0.3);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  border: 2px solid #63626260;
+}
+
+.buttonglow:hover {
+  border: 2px solid #63626260;
+  box-shadow: 0 0 5px #73ff57, 0 0 20px #C1FF57, 0 0 50px #7eff57, 0 0 100px #27b227;
+  transform: translateY(-2px);
+
+}
+
+.buttonglow .svgIcon {
+  fill: #000;
+}
+
+.buttonglow:hover .svgIcon {
+  transform: rotate(360deg);
+  transition-duration: .8s;
+
+}
+
+.wrapper_btns {
+  display: inline-flex;
+  list-style: none;
+  height: 60px;
+  width: 115px;
+  padding-top: 0px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+
+  border-radius: 5%;
+
+}
+
+.wrapper_btns .icon {
+  position: relative;
+  background: #ffffff40;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30%;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper_btns .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper_btns .icon:hover .tooltip {
+  top: -36px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper_btns .icon:hover span,
+.wrapper_btns .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+
+}
+
+.wrapper_btns .download:hover,
+.wrapper_btns .download:hover .tooltip,
+.wrapper_btns .download:hover .tooltip::before {
+  background: #8ed238;
+  color: #fff;
+
+}
+
+.wrapper_btns .download:hover {
+  transform: scale(1.09);
+  box-shadow: 0 0 5px #C1FF57, 0 0 20px #C1FF57, 0 0 50px #C1FF57, 0 0 100px #7AB227;
+}
+
+.wrapper_btns .download:active {
+  transform: scale(0.975);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+.wrapper_btns .flash:hover,
+.wrapper_btns .flash:hover .tooltip,
+.wrapper_btns .flash:hover .tooltip::before {
+  background: #e05c98;
+  color: #fff;
+}
+
+
+.wrapper_btns .flash:hover {
+  transform: scale(1.09);
+  box-shadow: 0 0 5px #ff57a5, 0 0 20px #ff578f, 0 0 50px #ff57ab, 0 0 100px #b22788;
+}
+
+.wrapper_btns .flash:active {
+  transform: scale(0.975);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+}
+
+#status {
+  display: none;
+  background: #272727;
+  padding: 8px;
+  margin-top: 10px;
+  white-space: pre-wrap;
+  border-radius: 4px;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+}
+
+/* From Uiverse.io by gogo_3618 */ 
+.heart {
+  height: 70px;
+  width: 70px;
+  background: #f20044;
+  transform: rotate(-45deg);
+  box-shadow: -10px -10px 90px #f20044;
+  animation: anim 0.6s linear infinite;
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(-45deg) scale(1.07);
+    filter: blur(0px);
+  }
+  80% {
+    transform: rotate(-45deg) scale(1);
+    filter: blur(1px);
+  }
+  100% {
+    transform: rotate(-45deg) scale(0.8);
+    filter: blur(2px);
+  }
+}
+
+.heart:before {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background: #f20044;
+  top: -50%;
+  border-radius: 50px;
+}
+.heart:after {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background: #f20044;
+  right: -50%;
+  border-radius: 50px;
+}
+
+
