@@ -1,0 +1,143 @@
+<!-- From Uiverse.io by sahilxkhadka -->
+<div
+    style="display: flex; box-shadow:
+      0px 5px 10px rgba(0, 0, 0, 0.5); border: 5px solid #505050; gap: 20px; border-radius: 20px; padding:15px; background-color: #1a1a1a; justify-content: center; flex-wrap: wrap;">
+
+    <!-- 1. Gris Clásico (Texto) -->
+    <button_Tip>
+        <span>ESC</span>
+    </button_Tip>
+    <!-- 3. Verde Menta (Texto) -->
+    <button_Tip style="--btn-color: #9CDE57;">
+        <span>Xotla</span>
+    </button_Tip>
+
+    <!-- 2. Morado Synthwave (Icono: Play) -->
+    <button_Tip style="--btn-color: #6c5ce7;">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+        </svg>
+    </button_Tip>
+
+    <!-- 3. Verde Menta (Texto) -->
+    <button_Tip style="--btn-color: #00b894;">
+        <span>DEL</span>
+    </button_Tip>
+
+    <!-- 4. Rojo Cherry (Icono: Corazón) -->
+    <button_Tip style="--btn-color: #d63031;">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+            <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+            </path>
+        </svg>
+    </button_Tip>
+
+    <!-- 5. Amarillo Cyberpunk (Texto - Contraste Oscuro) -->
+    <button_Tip style="--btn-color: #f1c40f; --btn-text: #1e272e;">
+        <span>FN</span>
+    </button_Tip>
+
+    <!-- 6. Azul Eléctrico (Icono: Configuración/Engrane) -->
+    <button_Tip style="--btn-color: #0984e3;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z">
+            </path>
+        </svg>
+    </button_Tip>
+
+    <!-- 7. Naranja Eléctrico (Icono: Power) -->
+    <button_Tip style="--btn-color: #e17055;">
+        <svg class="w-[19px] h-[19px] text-gray-800 dark:text-white" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M8.597 3.2A1 1 0 0 0 7.04 4.289a3.49 3.49 0 0 1 .057 1.795 3.448 3.448 0 0 1-.84 1.575.999.999 0 0 0-.077.094c-.596.817-3.96 5.6-.941 10.762l.03.049a7.73 7.73 0 0 0 2.917 2.602 7.617 7.617 0 0 0 3.772.829 8.06 8.06 0 0 0 3.986-.975 8.185 8.185 0 0 0 3.04-2.864c1.301-2.2 1.184-4.556.588-6.441-.583-1.848-1.68-3.414-2.607-4.102a1 1 0 0 0-1.594.757c-.067 1.431-.363 2.551-.794 3.431-.222-2.407-1.127-4.196-2.224-5.524-1.147-1.39-2.564-2.3-3.323-2.788a8.487 8.487 0 0 1-.432-.287Z" />
+        </svg>
+
+
+
+
+    </button_Tip>
+
+</div>
+
+
+
+
+
+
+
+
+css
+
+
+/* From Uiverse.io by sahilxkhadka */
+button_Tip {
+all: unset;
+position: relative;
+height: 4em;
+width: 4em;
+padding: 5px 5px;
+border-radius: 10px;
+
+/* 1. Variables por defecto (Gris original) */
+--btn-color: #232323;
+--btn-text: #ffffff;
+
+/* 2. Cálculo automático del borde/base */
+--base-start: color-mix(in srgb, var(--btn-color) 80%, #000);
+--base-end: color-mix(in srgb, var(--btn-color) 60%, #000);
+
+background: linear-gradient(180deg, var(--base-start), var(--base-end));
+box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+inset 0 -8px 8px rgba(0, 0, 0, 0.25),
+0 0 0 2px rgba(0, 0, 0, 0.75),
+10px 20px 25px rgba(0, 0, 0, 0.4);
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+
+button_Tip::before {
+content: "";
+position: absolute;
+top: 3px;
+left: 4px;
+bottom: 14px;
+right: 12px;
+
+/* 3. Cálculo automático del gradiente superior */
+--face-start: var(--btn-color);
+--face-end: color-mix(in srgb, var(--btn-color) 82%, #fff);
+
+background: linear-gradient(90deg, var(--face-start), var(--face-end));
+border-radius: 10px;
+box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.15);
+border-left: 1px solid #0004;
+border-bottom: 1px solid #0004;
+border-top: 1px solid #0009;
+}
+
+/* Estilo para el texto */
+button_Tip span {
+font-size: 1.2rem;
+color: var(--btn-text);
+position: relative;
+margin-top: -8px;
+}
+
+/* --- NUEVO: Soporte para iconos SVG --- */
+button_Tip svg {
+width: 2.6em;
+height: 2.6em;
+color: var(--btn-text);
+/* Hereda el color del texto para el relleno y los trazos */
+fill: currentColor;
+stroke: currentColor;
+position: relative;
+margin-top: -8px; /* Desplazamiento idéntico al texto para centrarse en la tecla */
+}

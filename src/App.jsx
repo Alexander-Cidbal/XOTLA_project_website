@@ -1,4 +1,4 @@
-﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -10,7 +10,7 @@ import Tutorials from "./pages/Tutorials";
 export default function App() {
   return (
     <LanguageProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
@@ -20,7 +20,7 @@ export default function App() {
             <Route path="/tutorials" element={<Tutorials />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </LanguageProvider>
   );
 }
