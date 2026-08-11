@@ -194,6 +194,51 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+<section className="py-12 bg-base-300">
+        <div className="container mx-auto px-6 md:px-10">
+          <div className="card w-full bg-base-100 shadow-xl overflow-hidden">
+            {/* Contenedor principal en grid/flex con padding equidistante */}
+            <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-8 gap-8">
+              {/* Columna Izquierda: Texto amistoso e invitación */}
+              <div className="w-full md:w-1/2 flex flex-col justify-center space-y-4 text-left">
+                <h2 className="text-7xl font-bold tracking-tight">
+                  ¡Apoya el <span className="text-primary">Proyecto Xotla</span>
+                  ! ☕✨
+                </h2>
+                <p className="text-base-content/80 text-xl leading-relaxed">
+                  Xotla es un sampler y cyberdeck musical de código abierto
+                  diseñado con muchísimo amor. Todo el hardware, los planos y el
+                  firmware están disponibles de manera gratuita.
+                </p>
+                <p className="text-base-content/80 text-xl leading-relaxed">
+                  Si te encanta este proyecto maker y quieres ayudar a seguir
+                  mejorando las iteraciones físicas, ¡invítanos un café!
+                  Cualquier granito de arena hace latir más fuerte este
+                  corazoncito musical. ¡Wiiii! 🚀
+                </p>
+              </div>
+
+              {/* Columna Derecha: Iframe de Ko-fi con padding y diseño integrado */}
+              <div className="w-full md:w-1/2 flex justify-center bg-base-200/50 p-4 rounded-box">
+                <iframe
+                  id="kofiframe"
+                  src="https://ko-fi.com/alexandercidbal/?hidefeed=true&widget=true&embed=true&preview=true"
+                  style={{
+                    border: "none",
+                    width: "100%",
+                    maxWidth: "450px",
+                    background: "transparent",
+                  }}
+                  height="650"
+                  title="alexandercidbal"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </>
   );
 }

@@ -8,20 +8,29 @@ function Mini_Flasher({ item, isOpen, onClose }) {
   if (!isOpen || !item) return null;
 
   return (
-    <dialog id={`modal-flash-${item.id ?? item.Version}`} className="modal" open>
+    <dialog
+      id={`modal-flash-${item.id ?? item.Version}`}
+      className="modal"
+      open
+    >
       <div className="modal-box max-w-md">
         <h3 className="font-bold text-lg mb-4">
           <T en="Flashing Tool" es="Herramienta de Flasheo" />
         </h3>
         <h3 className="text-sm mb-4">
-          <T en="⚠️ Flasher for development, use the main flasher ⚠️" es="⚠️ Herramienta en desarrollo, usa el flasher principal ⚠️" />
+          <T
+            en="⚠️ Flasher for development, use the main flasher ⚠️"
+            es="⚠️ Herramienta en desarrollo, usa el flasher principal ⚠️"
+          />
         </h3>
         <div className="space-y-3 text-sm bg-base-200 p-4 rounded-lg">
           <div className="flex justify-between">
             <span className="opacity-70">
               <T en="Version" es="Versión" />:
             </span>
-            <span className="font-mono font-semibold">{item.Version ?? "-"}</span>
+            <span className="font-mono font-semibold">
+              {item.Version ?? "-"}
+            </span>
           </div>
           <div className="flex justify-between">
             <span className="opacity-70">
@@ -51,10 +60,7 @@ function Mini_Flasher({ item, isOpen, onClose }) {
         </div>
         <div className="modal-action mt-4">
           <form method="dialog" className="w-full">
-            <button
-              className="btn btn-primary w-full"
-              onClick={onClose}
-            >
+            <button className="btn btn-primary w-full" onClick={onClose}>
               <T en="Close" es="Cerrar" />
             </button>
           </form>
@@ -123,8 +129,7 @@ export default function Downloads() {
   return (
     <>
       {/* Header */}
-      <section className="py-20 bg-base-300 text-center" >
-      
+      <section className="py-20 bg-base-300 text-center">
         <div className="container mx-auto px-6">
           <h1 className="text-5xl font-bold text-primary mb-4">
             <T en="Downloads" es="Descargas" />
@@ -215,7 +220,6 @@ export default function Downloads() {
                                     <T en="Download" es="Descargar" />
                                   </span>
                                   <DownloadIcon />
-                                
                                 </a>
                               </li>
                               <li className="icon flash">
@@ -238,6 +242,49 @@ export default function Downloads() {
                     ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 bg-base-300">
+        <div className="container mx-auto px-6 md:px-40">
+          <div className="card w-full bg-base-100 shadow-xl overflow-hidden">
+            {/* Contenedor principal en grid/flex con padding equidistante */}
+            <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-8 gap-8">
+              {/* Columna Izquierda: Texto amistoso e invitación */}
+              <div className="w-full md:w-1/2 flex flex-col justify-center space-y-4 text-left">
+                <h2 className="text-7xl font-bold tracking-tight">
+                  ¡Apoya el <span className="text-primary">Proyecto Xotla</span>
+                  ! ☕✨
+                </h2>
+                <p className="text-base-content/80 text-xl leading-relaxed">
+                  Xotla es un sampler y cyberdeck musical de código abierto
+                  diseñado con muchísimo amor. Todo el hardware, los planos y el
+                  firmware están disponibles de manera gratuita.
+                </p>
+                <p className="text-base-content/80 text-xl leading-relaxed">
+                  Si te encanta este proyecto maker y quieres ayudar a seguir
+                  mejorando las iteraciones físicas, ¡invítanos un café!
+                  Cualquier granito de arena hace latir más fuerte este
+                  corazoncito musical. ¡Wiiii! 🚀
+                </p>
+              </div>
+
+              {/* Columna Derecha: Iframe de Ko-fi con padding y diseño integrado */}
+              <div className="w-full md:w-1/2 flex justify-center bg-base-200/50 p-4 rounded-box">
+                <iframe
+                  id="kofiframe"
+                  src="https://ko-fi.com/alexandercidbal/?hidefeed=true&widget=true&embed=true&preview=true"
+                  style={{
+                    border: "none",
+                    width: "100%",
+                    maxWidth: "450px",
+                    background: "transparent",
+                  }}
+                  height="650"
+                  title="alexandercidbal"
+                />
+              </div>
             </div>
           </div>
         </div>
